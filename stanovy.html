@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- html 5 enabling script -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+      <title>Bulletin advokacie, odborný právnický portál | Stanovy společenství vlastníků jednotek - změny od 1. 1. 2014</title>
+  <meta name="description" content="Oficiální stránky největšího právnického časopisu v ČR. Odborné články, komentáře, judikatura.">
+  <meta name="keywords" content="advokát, právo, zákony, justice, občanský zákoník, noz, soudní řád, trestní právo, advokátní, obhajoba, spravedlnost">
+  <meta charset="UTF-8">
+  <base href="http://www.bulletin-advokacie.cz/" />
+  
+  <meta name="robots" content="index, follow">
+<meta name="author" content="Česká advokátní komora">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
+    <meta name="google-site-verification" content="khtx-JZ4Vhrz-Di4dhoUaz4BP6weXg1XAeDDKyggvXE" />
+    <link href="assets/css/normalize.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="assets/css/screen.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="assets/css/pepa.css" rel="stylesheet" type="text/css" media="screen"/>
+    <meta name="google-site-verification" content="khtx-JZ4Vhrz-Di4dhoUaz4BP6weXg1XAeDDKyggvXE" />
+    
+    <!--<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+$(document).on('click', '.events1 #Calendar .prev a, .events1 #Calendar .next a', function() {
+    	var cal = $(this).parentsUntil('.calendar').parent();
+		var href = $(this).attr('href');
+        href1=href+"&cal=cal1";		
+        href2=href+"&cal=cal2";    	
+        href3=href+"&cal=cal3";    	
+        href4=href+"&cal=cal4";    	
+        href5=href+"&cal=cal5"; 
+        
+		$(cal).css('opacity', 0.7);
+
+		var width = $(cal).css('width');
+		var height = $(cal).css('height');
+		
+		$(cal).parent().find('.cover').css({'width': width, 'height': height, 'margin-top': '-' + height}).show();
+		
+		$.get(href1, function(data) {
+				$(cal).parent().find('.cover').hide();
+				$('#cal1 #Calendar .calendar').replaceWith(data);
+			}
+		)
+            	$.get(href2, function(data) {
+				$(cal).parent().find('.cover').hide();
+				$('#cal2 #Calendar .calendar').replaceWith(data);
+			}
+		)
+            	$.get(href3, function(data) {
+				$(cal).parent().find('.cover').hide();
+				$('#cal3 #Calendar .calendar').replaceWith(data);
+			}
+		)
+            	$.get(href4, function(data) {
+				$(cal).parent().find('.cover').hide();
+				$('#cal4 #Calendar .calendar').replaceWith(data);
+			}
+		)
+                       $.get(href5, function(data) {
+    			$(cal).parent().find('.cover').hide();
+				$('#cal5 #Calendar .calendar').replaceWith(data);
+			}
+		)
+
+		return false;    
+	})
+    
+    $('#Calendar .isevent').live('mouseenter',function() {
+id = this.id;
+$('#' + id + ' .event').show();
+})
+$('#Calendar .isevent').live('mouseleave',function() {
+id = this.id;
+$('#' + id + ' .event').hide();
+})
+
+
+          
+
+            var heightGreenLeft = $(".green-box-left").height();
+var heightGreenRight = $(".green-box-right").height();
+
+if (heightGreenLeft > heightGreenRight)
+{
+    $(".green-box-left").height(heightGreenLeft);
+    $(".green-box-right").height(heightGreenLeft);
+}
+else
+{
+    $(".green-box-left").height(heightGreenRight);
+    $(".green-box-right").height(heightGreenRight);    
+}
+
+$("#events > div").hide();
+$("#events > div.title").show();
+
+$("#cal1").show();
+
+
+$("#cal1_activator").click(function() {
+    $(".cal_button").removeClass("active");
+    $(".events1 span.first").addClass("active");
+    $(".events1 > div").hide();
+    $(".events1 > div.title").show();
+    $("#cal1").css('opacity','0').show().animate({opacity:'1'}, 700); 
+});
+
+$("#cal2_activator").click(function() {
+    $(".cal_button").removeClass("active");
+    $(".events1 span.second").addClass("active");
+    $(".events1 > div").hide();
+    $(".events1 > div.title").show();
+    $("#cal2").css('opacity','0').show().animate({opacity:'1'}, 700);
+});
+
+$("#cal3_activator").click(function() {
+    $(".cal_button").removeClass("active");
+    $(".events1 span.third").addClass("active");
+    $(".events1 > div").hide();
+    $(".events1 > div.title").show();
+    $("#cal3").css('opacity','0').show().animate({opacity:'1'}, 700);
+});
+
+$("#cal4_activator").click(function() {
+    $(".cal_button").removeClass("active");
+    $(".events1 span.fourth").addClass("active");
+    $(".events1 > div").hide();
+    $(".events1 > div.title").show();
+    $("#cal4").css('opacity','0').show().animate({opacity:'1'}, 700);
+});
+
+$("#cal5_activator").click(function() {
+    $(".cal_button").removeClass("active");
+    $(".events1 span.fifth").addClass("active");
+    $(".events1 > div").hide();
+    $(".events1 > div.title").show();
+    $("#cal5").css('opacity','0').show().animate({opacity:'1'}, 700);
+});
+
+// replacing JUDr.
+$("#content h1").html( $("#content h1").text().replace("JUDr", "JUD<span style='text-transform: lowercase;'>r</span>") );
+
+            
+$('a[href*="#ftn" ]').each(function(){
+    var text = this.href;
+    var where_is_ftn=text.indexOf('ftn');
+    var ftn_length=text.length;
+    a_name=text.substring(where_is_ftn,ftn_length);
+    var a_inner_ftn=$('a[name='+a_name+']').closest("div").html();
+    var a_inner_text=$(this).html();
+    a_inner_text=a_inner_text+"<div id='div"+a_name+"' style='display:none;position:absolute;' class='ftnBox'>"+a_inner_ftn+"</div>";
+    $(this).html(a_inner_text);
+    $('div#div'+a_name+' a[name='+a_name+']').hide();
+    $(this).addClass('cl_ftn');
+});
+
+$('a.cl_ftn').hover(
+  function () {
+  $(this).children('div').show("fast");
+  },
+  function () {
+  $(this).children('div').stop().hide("fast");
+  }
+);
+
+
+
+
+
+            $("section#content img").each(function( index ) {
+    var imageCaption = $(this).attr("alt");
+    
+    if (imageCaption != '') {
+        var imgWidth = $(this).width();
+        var imgHeight = $(this).height();
+        var position = $(this).position();
+        var positionTop = (position.top + imgHeight - 26)
+        $("<div class='img-caption' id='img-caption-"+ index +"'><em>"+imageCaption+"</em></span>")
+        .css({"position":"absolute", "top":positionTop+"px", "left":"0", "width":imgWidth +"px"})
+        .insertAfter(this);
+        
+        var id = "#img-caption-" + index;
+        var height = $(id).height();
+
+        var newPositionTop = (position.top + imgHeight - height + 1) + "px";
+        $(id).css({"top":newPositionTop});
+
+    }
+});
+        });
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35949349-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link type="text/css" rel="stylesheet" href="/assets/components/eventscalendar2/css/default.css"/>
+</head>
+
+<body>
+
+<header>
+        <div class="motto">
+        oficiální stránky odborného&nbsp; právnického časopisu české advokacie
+        •
+        oficiální stránky odborného &nbsp;právnického časopisu české advokacie &nbsp; 
+    </div>
+    
+    <a href="http://www.cak.cz/pages/index_nosound.html"  target="_blank">
+        <img src="assets/img/logo-ak.png" style="float: right;" alt="AK Logo">
+    </a>
+    <a href="/">
+        <img src="assets/img/logo.png" alt="Logo">
+    </a>
+        <nav class="" >
+        <ul><li class="first"><a href="http://www.bulletin-advokacie.cz/" title="Domů" >Domů</a></li>
+<li><a href="aktuality/" title="Aktuality" >Aktuality</a></li>
+<li class="current"><a href="odborne-prispevky" title="Odborné příspěvky" >Odborné příspěvky</a><ul><li class="first current"><a href="clanky/" title="Články" >Články</a></li>
+<li><a href="odborne-judikatura/" title="Judikatura a stanoviska" >Judikatura a stanoviska</a></li>
+<li class="last"><a href="recenze-a-anotace/" title="Recenze a anotace" >Recenze a anotace</a></li>
+</ul></li>
+<li><a href="z-advokacie/" title="Z advokacie" >Z advokacie</a></li>
+<li><a href="pro-inzerenty" title="Pro inzerenty" >Pro inzerenty</a></li>
+<li><a href="proautory" title="Pro autory" >Pro autory</a></li>
+<li><a href="http://www.cak.cz/" title="Web ČAK" >Web ČAK</a></li>
+<li><a href="kontakty/" title="Kontakty" >Kontakty</a></li>
+<li class="last"><a href="galerie-oslavy-25-let" title="Oslavy 25 let" >Oslavy 25 let</a></li>
+</ul>
+        <div class="rssIcon">
+            <a href="rss/">    
+                <img src="assets/images/rss_icon.png" height="27" width="29" alt="RSS">
+            </a>
+        </div>
+    </nav>
+</header>
+<section id="top-stripe">
+    <div class="blue-stripe">
+        <div id="dont-miss">
+            <div class="large">vítejte!</div>
+            <div class="small">Právě jste vstoupili na Bulletin advokacie online. Naleznete zde obsah stavovského odborného časopisu Bulletin advokacie i příspěvky exklusivně určené jen pro tento portál.</div>
+        </div>
+        <div id="search">
+            VYHLEDAT NA WEBU<br>
+            <form action="hledat" method="get" id="SF">    
+                <input type="text" name="search" style="float: left;" />
+                <img src="assets/img/search-arrow.png" style="float: left;padding: 6px 0 0 5px;" onclick="$('#SF').submit()" alt="search">
+            </form>
+        </div>
+                <a href="http://www.bulletin-advokacie.cz/vyzva-advokatum-hledame-osobnosti-ceske-advokacie"> 
+            <img src="/assets/zdroje/obrazky/bannery/banner_60_v3.png" style="float: right; border-left: 2px white solid;" alt="Top banner">
+        </a> 
+      
+         
+            <img src="/assets/zdroje/obrazky/bannery/banner_oceneni_2015.png" style="float: right; border-left: 2px white solid;" alt="Top banner">
+         
+      
+        <a href="http://www.bulletin-advokacie.cz/ctvrt-stoleti-svobodne-advokacie"> 
+            <img src="/assets/zdroje/obrazky/bannery/uvodnik_9_2015.png" style="float: right; border-left: 2px white solid;" alt="Top banner">
+        </a> 
+      
+    </div>
+</section>
+
+<section id="main">
+    
+
+      <section id="right-bar">
+    <div id="top" class="component">
+        <div class="title">NEJČTENĚJŠÍ</div>
+      
+                    <div class="top-article">
+                <a href="nejvyssi-spravni-soud-se-obraci-na-sublice">Nejvyšší správní soud se obrací na Soudní dvůr s předběžnou otázkou týkající se zajišťování migrantů v České republice</a><br>
+                <!--<span class="lightblue">autor:</span> <span class="author"></span>-->
+            </div>
+            <div class="top-article">
+                <a href="vlada-schvalila-navrh-zakona-o-zadavani-verejnych-zakazek">Vláda schválila návrh zákona o zadávání veřejných zakázek</a><br>
+                <!--<span class="lightblue">autor:</span> <span class="author"></span>-->
+            </div>
+            <div class="top-article">
+                <a href="konference-trestni-odpovednost-pravnickych-osob-v-praxi">Konference - Trestní odpovědnost právnických osob v praxi</a><br>
+                <!--<span class="lightblue">autor:</span> <span class="author"></span>-->
+            </div>
+
+    </div>
+ 
+    <a href="galerie-oslavy-25-let">
+        <img src="assets/zdroje/obrazky/bannery/galerie_BA_online.png" style="margin-bottom: 30px;">
+    </a>
+
+    <div id="events" class="component events1">
+        <div class="title">KALENDÁŘ AKCÍ</div>
+        
+        <span class="cal_button first active">
+            <a id="cal1_activator" class="cal_activator">advokáti</a>
+        </span>
+        <span class="cal_button second">
+            <a id="cal2_activator" class="cal_activator">koncipienti</a>
+        </span>
+        <span class="cal_button third">
+            <a id="cal3_activator" class="cal_activator">volný čas</a>
+        </span>
+        <span class="cal_button fourth">
+            <a id="cal4_activator" class="cal_activator">jiné</a>
+        </span> 
+        
+
+        <span style="display: block; height: 20px; width: 200px;clear:both;"></span>
+        
+        <div id="cal1" class="cal">
+        <div id='Calendar'>
+    <table class="calendar"><tr>
+	<td class="prev"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=9&amp;year=2015" style="color: #333333;">&laquo;</a></td>
+	<td class="month" colspan="5" style="text-align:center;"><strong>říjen 2015</strong></td>
+	<td class="next"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=11&amp;year=2015" style="color: #333333;">&raquo;</a></td>
+</tr><tr><th class="dow">Po</th><th class="dow">Út</th><th class="dow">St</th><th class="dow">Čt</th><th class="dow">Pá</th><th class="dow">So</th><th class="dow">Ne</th></tr><tr><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="cell workday isevent" id="cal1_1" data-fulldate="2015-10-1">
+	<div class="date">1</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">01/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Správa cizího majetku</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal1_2" data-fulldate="2015-10-2">
+	<div class="date">2</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_3" data-fulldate="2015-10-3">
+	<div class="date">3</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_4" data-fulldate="2015-10-4">
+	<div class="date">4</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal1_5" data-fulldate="2015-10-5">
+	<div class="date">5</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal1_6" data-fulldate="2015-10-6">
+	<div class="date">6</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">06/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Společnost s ručením omezeným</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal1_7" data-fulldate="2015-10-7">
+	<div class="date">7</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">07/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Obecná část OZ a věcná práva II.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal1_8" data-fulldate="2015-10-8">
+	<div class="date">8</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Důsledky porušení smlouvy podle (nového) občanského zákoníku</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Obecná část OZ a věcná práva II.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal1_9" data-fulldate="2015-10-9">
+	<div class="date">9</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_10" data-fulldate="2015-10-10">
+	<div class="date">10</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_11" data-fulldate="2015-10-11">
+	<div class="date">11</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal1_12" data-fulldate="2015-10-12">
+	<div class="date">12</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal1_13" data-fulldate="2015-10-13">
+	<div class="date">13</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">13/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Vyživovací povinnost mezi manžely, rodiči a dětmi, a dalšími příbuznými</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal1_14" data-fulldate="2015-10-14">
+	<div class="date">14</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">14/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Katastrální zákon</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal1_15" data-fulldate="2015-10-15">
+	<div class="date">15</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">15/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Byty a nebytové prostory, nájemní právo v NOZ</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal1_16" data-fulldate="2015-10-16">
+	<div class="date">16</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_17" data-fulldate="2015-10-17">
+	<div class="date">17</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_18" data-fulldate="2015-10-18">
+	<div class="date">18</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal1_19" data-fulldate="2015-10-19">
+	<div class="date">19</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal1_20" data-fulldate="2015-10-20">
+	<div class="date">20</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">20/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Aktuál.vývoj legislativy a judikatury EU v oblasti práva veřej. zakázek a vliv na čs.právní úpravu</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal1_21" data-fulldate="2015-10-21">
+	<div class="date">21</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_22" data-fulldate="2015-10-22">
+	<div class="date">22</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_23" data-fulldate="2015-10-23">
+	<div class="date">23</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_24" data-fulldate="2015-10-24">
+	<div class="date">24</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_25" data-fulldate="2015-10-25">
+	<div class="date">25</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal1_26" data-fulldate="2015-10-26">
+	<div class="date">26</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_27" data-fulldate="2015-10-27">
+	<div class="date">27</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_28" data-fulldate="2015-10-28">
+	<div class="date">28</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_29" data-fulldate="2015-10-29">
+	<div class="date">29</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal1_30" data-fulldate="2015-10-30">
+	<div class="date">30</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal1_31" data-fulldate="2015-10-31">
+	<div class="date">31</div>
+	<div class="event"></div>
+</td><td class="emptyday">&nbsp;</td></tr></table>
+    <div class='cover'></div>
+</div>            
+        
+        </div>
+        
+        <div id="cal2" class="cal">
+        <div id='Calendar'>
+    <table class="calendar"><tr>
+	<td class="prev"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=9&amp;year=2015" style="color: #333333;">&laquo;</a></td>
+	<td class="month" colspan="5" style="text-align:center;"><strong>říjen 2015</strong></td>
+	<td class="next"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=11&amp;year=2015" style="color: #333333;">&raquo;</a></td>
+</tr><tr><th class="dow">Po</th><th class="dow">Út</th><th class="dow">St</th><th class="dow">Čt</th><th class="dow">Pá</th><th class="dow">So</th><th class="dow">Ne</th></tr><tr><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="cell workday today isevent" id="cal2_1" data-fulldate="2015-10-1">
+	<div class="date">1</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">01/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Veřejný rejstřík a korporace</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">01/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Činnost advokáta v oblasti absolutních majetkových práv</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_2" data-fulldate="2015-10-2">
+	<div class="date">2</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">02/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Obhajoba v řízení před soudem II. stupně a mimořádné opravné prostředky</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal2_3" data-fulldate="2015-10-3">
+	<div class="date">3</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal2_4" data-fulldate="2015-10-4">
+	<div class="date">4</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal2_5" data-fulldate="2015-10-5">
+	<div class="date">5</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal2_6" data-fulldate="2015-10-6">
+	<div class="date">6</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal2_7" data-fulldate="2015-10-7">
+	<div class="date">7</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">07/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Obhajoba v přípravném řízení</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">07/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení II.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_8" data-fulldate="2015-10-8">
+	<div class="date">8</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení I.</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení II.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_9" data-fulldate="2015-10-9">
+	<div class="date">9</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">09/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Postup obhájce v konkrétní věci - simulace trestního procesu</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal2_10" data-fulldate="2015-10-10">
+	<div class="date">10</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal2_11" data-fulldate="2015-10-11">
+	<div class="date">11</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday isevent" id="cal2_12" data-fulldate="2015-10-12">
+	<div class="date">12</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">12/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Obhajoba v  řízení před soudem I. stupně</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">12/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Obhajoba ve věcech mladistvých</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_13" data-fulldate="2015-10-13">
+	<div class="date">13</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">13/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">POZOR změna termínu  3. rok - Veřejný rejstřík a korporace</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_14" data-fulldate="2015-10-14">
+	<div class="date">14</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">14/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Advokát, jednání s klientem, smluvní agenda a jiné projevy advokáta</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">14/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Advokátní tarif</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>3.</b></span>
+    <span class="eventdate">14/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Relativní majetková práva s mezinárodním prvkem</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>4.</b></span>
+    <span class="eventdate">14/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení II.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_15" data-fulldate="2015-10-15">
+	<div class="date">15</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">15/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Obhajoba v přípravném řízení</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">15/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Obhajoba v řízení před soudem I. stupně</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_16" data-fulldate="2015-10-16">
+	<div class="date">16</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">16/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Opravné prostředky v civilním řízení - pozor změna hodiny konání semináře</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">16/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Zvláštní řízení soudní, výkon rozhodnutí a exekuce - pozor změna hodiny konání semináře</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal2_17" data-fulldate="2015-10-17">
+	<div class="date">17</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal2_18" data-fulldate="2015-10-18">
+	<div class="date">18</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday isevent" id="cal2_19" data-fulldate="2015-10-19">
+	<div class="date">19</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">19/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Řízení insolvenční</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">19/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Obchodní korporace</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_20" data-fulldate="2015-10-20">
+	<div class="date">20</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">20/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Vstupní školení pro advokátní koncipienty</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_21" data-fulldate="2015-10-21">
+	<div class="date">21</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">21/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Vstupní školení pro advokátní koncipienty</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">21/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Trestní odpovědnost právnických osob</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>3.</b></span>
+    <span class="eventdate">21/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení II.</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>4.</b></span>
+    <span class="eventdate">21/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">1. rok - Advokát v civilním řízení I.</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_22" data-fulldate="2015-10-22">
+	<div class="date">22</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">22/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Vstupní školení pro advokátní koncipienty</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">22/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">POZOR změna konání semináře 1. rok - Zastupování advokátem ve správním řízení</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_23" data-fulldate="2015-10-23">
+	<div class="date">23</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">23/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Advokátní tarif</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal2_24" data-fulldate="2015-10-24">
+	<div class="date">24</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal2_25" data-fulldate="2015-10-25">
+	<div class="date">25</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday isevent" id="cal2_26" data-fulldate="2015-10-26">
+	<div class="date">26</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">26/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Stavovské předpisy</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">26/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">3. rok - Činnost advokáta v oblasti absolutních majetkových práv</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_27" data-fulldate="2015-10-27">
+	<div class="date">27</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">27/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">2. rok - Advokát, jednání s klientem, smluvní agenda a jiné projevy advokáta</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal2_28" data-fulldate="2015-10-28">
+	<div class="date">28</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal2_29" data-fulldate="2015-10-29">
+	<div class="date">29</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">29/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Advokát a jeho klient</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal2_30" data-fulldate="2015-10-30">
+	<div class="date">30</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">30/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Evropské instituce na ochranu lidských práv</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">30/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Německo-česko-slovenské advokátní fórum 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend isevent" id="cal2_31" data-fulldate="2015-10-31">
+	<div class="date">31</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">31/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Německo-česko-slovenské advokátní fórum 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="emptyday">&nbsp;</td></tr></table>
+    <div class='cover'></div>
+</div>
+        
+        </div>
+        
+        <div id="cal3" class="cal">
+        <div id='Calendar'>
+    <table class="calendar"><tr>
+	<td class="prev"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=9&amp;year=2015" style="color: #333333;">&laquo;</a></td>
+	<td class="month" colspan="5" style="text-align:center;"><strong>říjen 2015</strong></td>
+	<td class="next"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=11&amp;year=2015" style="color: #333333;">&raquo;</a></td>
+</tr><tr><th class="dow">Po</th><th class="dow">Út</th><th class="dow">St</th><th class="dow">Čt</th><th class="dow">Pá</th><th class="dow">So</th><th class="dow">Ne</th></tr><tr><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="cell workday noevent" id="cal3_1" data-fulldate="2015-10-1">
+	<div class="date">1</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal3_2" data-fulldate="2015-10-2">
+	<div class="date">2</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">02/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">18. Sportovní hry české advokacie</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend isevent" id="cal3_3" data-fulldate="2015-10-3">
+	<div class="date">3</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">03/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">18. Sportovní hry české advokacie</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend isevent" id="cal3_4" data-fulldate="2015-10-4">
+	<div class="date">4</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">04/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">18. Sportovní hry české advokacie</a></span>
+	<span class="notice"></span>
+</div></div>
+</td></tr><tr><td class="cell workday noevent" id="cal3_5" data-fulldate="2015-10-5">
+	<div class="date">5</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_6" data-fulldate="2015-10-6">
+	<div class="date">6</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_7" data-fulldate="2015-10-7">
+	<div class="date">7</div>
+	<div class="event"></div>
+</td><td class="cell workday today noevent" id="cal3_8" data-fulldate="2015-10-8">
+	<div class="date">8</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_9" data-fulldate="2015-10-9">
+	<div class="date">9</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_10" data-fulldate="2015-10-10">
+	<div class="date">10</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_11" data-fulldate="2015-10-11">
+	<div class="date">11</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal3_12" data-fulldate="2015-10-12">
+	<div class="date">12</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_13" data-fulldate="2015-10-13">
+	<div class="date">13</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_14" data-fulldate="2015-10-14">
+	<div class="date">14</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_15" data-fulldate="2015-10-15">
+	<div class="date">15</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_16" data-fulldate="2015-10-16">
+	<div class="date">16</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_17" data-fulldate="2015-10-17">
+	<div class="date">17</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_18" data-fulldate="2015-10-18">
+	<div class="date">18</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal3_19" data-fulldate="2015-10-19">
+	<div class="date">19</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_20" data-fulldate="2015-10-20">
+	<div class="date">20</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_21" data-fulldate="2015-10-21">
+	<div class="date">21</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_22" data-fulldate="2015-10-22">
+	<div class="date">22</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_23" data-fulldate="2015-10-23">
+	<div class="date">23</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_24" data-fulldate="2015-10-24">
+	<div class="date">24</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_25" data-fulldate="2015-10-25">
+	<div class="date">25</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal3_26" data-fulldate="2015-10-26">
+	<div class="date">26</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_27" data-fulldate="2015-10-27">
+	<div class="date">27</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_28" data-fulldate="2015-10-28">
+	<div class="date">28</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_29" data-fulldate="2015-10-29">
+	<div class="date">29</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal3_30" data-fulldate="2015-10-30">
+	<div class="date">30</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal3_31" data-fulldate="2015-10-31">
+	<div class="date">31</div>
+	<div class="event"></div>
+</td><td class="emptyday">&nbsp;</td></tr></table>
+    <div class='cover'></div>
+</div>
+        
+        </div>
+        
+        <div id="cal4" class="cal">
+        <div id='Calendar'>
+    <table class="calendar"><tr>
+	<td class="prev"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=9&amp;year=2015" style="color: #333333;">&laquo;</a></td>
+	<td class="month" colspan="5" style="text-align:center;"><strong>říjen 2015</strong></td>
+	<td class="next"><a href="http://www.bulletin-advokacie.cz/?action=refreshCalendar&amp;month=11&amp;year=2015" style="color: #333333;">&raquo;</a></td>
+</tr><tr><th class="dow">Po</th><th class="dow">Út</th><th class="dow">St</th><th class="dow">Čt</th><th class="dow">Pá</th><th class="dow">So</th><th class="dow">Ne</th></tr><tr><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="emptyday">&nbsp;</td><td class="cell workday isevent" id="cal4_1" data-fulldate="2015-10-1">
+	<div class="date">1</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">01/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Právo na obhajobu – teorie a praxe 21. století</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday noevent" id="cal4_2" data-fulldate="2015-10-2">
+	<div class="date">2</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_3" data-fulldate="2015-10-3">
+	<div class="date">3</div>
+	<div class="event"></div>
+</td><td class="cell weekend isevent" id="cal4_4" data-fulldate="2015-10-4">
+	<div class="date">4</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">04/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td></tr><tr><td class="cell workday isevent" id="cal4_5" data-fulldate="2015-10-5">
+	<div class="date">5</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">05/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal4_6" data-fulldate="2015-10-6">
+	<div class="date">6</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">06/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal4_7" data-fulldate="2015-10-7">
+	<div class="date">7</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">07/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal4_8" data-fulldate="2015-10-8">
+	<div class="date">8</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div><div >
+    <span class="num"><b>2.</b></span>
+    <span class="eventdate">08/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Trestní odpovědnost právnických osob v praxi</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell workday isevent" id="cal4_9" data-fulldate="2015-10-9">
+	<div class="date">9</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">09/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">IBA: Annual Conference Vienna 2015</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal4_10" data-fulldate="2015-10-10">
+	<div class="date">10</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_11" data-fulldate="2015-10-11">
+	<div class="date">11</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal4_12" data-fulldate="2015-10-12">
+	<div class="date">12</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_13" data-fulldate="2015-10-13">
+	<div class="date">13</div>
+	<div class="event"></div>
+</td><td class="cell workday today noevent" id="cal4_14" data-fulldate="2015-10-14">
+	<div class="date">14</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_15" data-fulldate="2015-10-15">
+	<div class="date">15</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_16" data-fulldate="2015-10-16">
+	<div class="date">16</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_17" data-fulldate="2015-10-17">
+	<div class="date">17</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_18" data-fulldate="2015-10-18">
+	<div class="date">18</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal4_19" data-fulldate="2015-10-19">
+	<div class="date">19</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_20" data-fulldate="2015-10-20">
+	<div class="date">20</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_21" data-fulldate="2015-10-21">
+	<div class="date">21</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_22" data-fulldate="2015-10-22">
+	<div class="date">22</div>
+	<div class="event"></div>
+</td><td class="cell workday isevent" id="cal4_23" data-fulldate="2015-10-23">
+	<div class="date">23</div>
+	<div class="event"><div >
+    <span class="num"><b>1.</b></span>
+    <span class="eventdate">23/10/2015</span>
+	<span class="link"><a href="http://www.cak.cz/scripts/modules/diary/default.php?calid=1&statusid=1" target="_blank">Systém ochrany průmyslového vlastnictví v Číně - ochranné známky</a></span>
+	<span class="notice"></span>
+</div></div>
+</td><td class="cell weekend noevent" id="cal4_24" data-fulldate="2015-10-24">
+	<div class="date">24</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_25" data-fulldate="2015-10-25">
+	<div class="date">25</div>
+	<div class="event"></div>
+</td></tr><tr><td class="cell workday noevent" id="cal4_26" data-fulldate="2015-10-26">
+	<div class="date">26</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_27" data-fulldate="2015-10-27">
+	<div class="date">27</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_28" data-fulldate="2015-10-28">
+	<div class="date">28</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_29" data-fulldate="2015-10-29">
+	<div class="date">29</div>
+	<div class="event"></div>
+</td><td class="cell workday noevent" id="cal4_30" data-fulldate="2015-10-30">
+	<div class="date">30</div>
+	<div class="event"></div>
+</td><td class="cell weekend noevent" id="cal4_31" data-fulldate="2015-10-31">
+	<div class="date">31</div>
+	<div class="event"></div>
+</td><td class="emptyday">&nbsp;</td></tr></table>
+    <div class='cover'></div>
+</div>    
+        
+        </div>
+        
+        
+    </div>
+        
+
+    
+    
+    <iframe src="http://bannery-published.ctech-test.cz/300x250/index.html" width="300px" height="250px" border="0" style="border: 0 solid black; margin-bottom: 30px;"></iframe>
+
+    <div id="eshop" class="component">
+      <div class="title">CHCETE SI OBJEDNAT?</div>
+
+            <div class="book">
+        <div class="cover">
+            <a href="http://obchod.wolterskluwer.cz/cz/ustava-ceske-republiky-zakon-o-bezpecnosti-ceske-republiky-komentar.p1539.html?utm_source=bulletin-advokacie&utm_medium=banner&utm_campaign=ustava-recenze" target="_blank">
+
+                <img src="/assets/zdroje/obrazky/knihy/ustava.png" alt="book 1" width="71" />
+            </a>
+        </div>
+        <div class="description">
+            Ústava České republiky 
+            <div class="price">Wolters Kluwer</div>        
+        </div>
+      </div>
+      <div class="book">
+        <div class="cover">
+            <a href="http://www.beck.cz/nesporna-rizeni-i" target="_blank">
+
+                <img src="/assets/zdroje/obrazky/knihy/EPI83.png" alt="book 1" width="71" />
+            </a>
+        </div>
+        <div class="description">
+            Nesporná řízení I
+            <div class="price">450 Kč</div>        
+        </div>
+      </div>
+
+      <div class="link"><a href="recenze-a-anotace/">přejít k recenzím (všechy tituly)</a></div>
+    </div>
+  
+    
+    
+    
+    
+    <iframe  style="width:320;height:150; margin:0;border:0;overflow: hidden;"  src="http://www.epravo.cz/banner/?width=300&amp;height=150"></iframe>
+
+    <div id="poll" class="component">
+      <div class="title"></div>
+      
+      <div style="float: left;">
+        <h2 class="title">
+            <a href="archiv-cisel/" style="color: rgb(0, 172, 238); text-decoration: none;">Archiv BA</a>
+        </h2>
+        <a href="archiv-cisel/">
+            <img src="/assets/zdroje/casopis/2015/BA_9_2015_obalka.png" width="117" style="margin-bottom: 30px;" alt="Archiv čísel">
+        </a>
+      </div>
+      
+      <div style="float:right; width: 58%;">
+      <h2 class="title">anketa</h2>
+      
+      <div class='question'>Podporujete sjednocení všech typů civilního soudního řízení do jediného zákona?</div><div id="ot1" class="otazka"><div class='anketa-wrapper'><div class='anketa_line' id='line0'  style='width:65px'></div></div><div class="moznost"><a href='?hlas=0'>Jednoznačně ano (22%)</a></div></div><div id="ot2" class="otazka"><div class='anketa-wrapper'><div class='anketa_line' id='line1'  style='width:61px'></div></div><div class="moznost"><a href='?hlas=1'>Spíše ano (21%)</a></div></div><div id="ot3" class="otazka"><div class='anketa-wrapper'><div class='anketa_line' id='line2'  style='width:52px'></div></div><div class="moznost"><a href='?hlas=2'>Nedokáži posoudit (18%)</a></div></div><div id="ot4" class="otazka"><div class='anketa-wrapper'><div class='anketa_line' id='line3'  style='width:55px'></div></div><div class="moznost"><a href='?hlas=3'>Spíše ne (19%)</a></div></div><div id="ot5" class="otazka"><div class='anketa-wrapper'><div class='anketa_line' id='line4'  style='width:60px'></div></div><div class="moznost"><a href='?hlas=4'>Jednoznačně ne (21%)</a></div></div>
+      </div>
+
+      <div style="clear: both; height: 20px;"></div>
+
+    </div>
+
+    <div id="partners" class="component">
+        <div class="title">PARTNEŘI</div>
+        <a href="https://www.sak.sk/" target="_blank">
+            <img src="assets/zdroje/obrazky/loga-partneru/SAK.jpg" alt="SAK" height="55" width="140" style="float: left; margin: 15px 0px 15px 10px;">
+        </a>
+
+        <a href="http://www.epravo.cz/" target="_blank">
+            <img src="assets/zdroje/obrazky/loga-partneru/epravo.jpg" alt="ePravo" height="55" width="140" style="float: left; margin: 15px 0px 15px 10px;">
+        </a>
+        <a href="http://www.wkcr.cz/" target="_blank">
+            <img src="assets/zdroje/obrazky/loga-partneru/WoltersKluwer-web-1.png" alt="WKCR" width="140" style="float: left; margin: 10px 0px 15px 10px;">
+        </a>
+        
+    </div>
+ 
+  </section>
+
+    <section id="content">
+    
+        <h1>Stanovy společenství vlastníků jednotek - změny od 1. 1. 2014</h1>
+        
+        <p style="margin: 20px 0 20px 0;">
+            <span class="lightblue">autor:</span>  <span style="margin-left: 10px;">Mgr. Svatava Trčková, JUDr. Milan Cellar</span></br>
+            <span class="lightblue">publikováno:</span>  <span style="margin-left: 10px;">23.05.2014</span>
+        </p>
+    
+        <p class="perex">I. Prameny právní úpravy
+
+Od 1. 1. 2014 se právní úprava společenství vlastníků přesunula přímo do nového občanského zákoníku zák. č. 89/2012 Sb. (dále jen „o. z.), jenž zároveň zrušil zákon o vlastnictví bytů č. 72/1994 Sb. (dále jen „zák. o vlastnictví bytů“) a vzorové stanovy vydané nařízením vlády č. 371/2004 Sb.</p>
+    
+        <p>Původních pět paragrafů zákona o vlastnictví bytů nahradilo 23 paragrafů nového občanského zákoníku. Podle důvodové zprávy se tím odstraňuje stav, kdy byly dosud některé významné otázky řešeny na úrovni podzákonného právního předpisu, což se jevilo jako dosti problematické. Samotná problematika společenství vlastníků je upravena v § 1194-1216 o. z. K pochopení všech souvislostí je zapotřebí dále minimálně nastudovat celou úpravu spoluvlastnictví (§ 1115-1239 o. z.), zejména bytového spoluvlastnictví (§ 1158-1222 o. z.). Nesmíme zapomenout ani na první část o. z., zejména na úpravu obecných ustanovení o právnických osobách, (§ 118-209 o. z.), a na úpravu spolku (§ 214-254, § 258-302 o. z.) s ohledem na přiměřené použití ustanovení o spolku v případě, že z ustanovení o společenství vlastníků nevyplývá něco jiného (§ 1221 o. z.). </p>
+<p>Dalším pramenem právní úpravy je nařízení vlády č. 366/2013 Sb., které upravuje způsob výpočtu podlahové plochy bytu v jednotce, vymezuje části nemovité věci, které jsou společné, a upravuje podrobnosti o činnostech týkajících se správy domu a pozemku.</p>
+<p>Vznik společenství vlastníků upravuje také zák. č. 311/2013 Sb., o převodu vlastnického práva k jednotkách a skupinovým rodinným domům některých bytových družstev a o změně některých zákonů. Ten upravuje převod vlastnického práva k jednotkám u bytových družstev vzniklých před 1. 1. 1992 a jejich právních nástupců, vystavěných s pomocí státu (a k jednotkám vzniklým nástavbou v těchto domech) a také vznik společenství vlastníků v těchto bytových domech.</p>
+<p>Pravidla pro příspěvky na úhradu cen služeb a pro způsobu určení jejich výše placené jednotlivými vlastníky, která představují nově od 1. 1. 2014 obligatorní náležitost stanov, upravují zejména:</p>
+<ul>
+<li>zákon č. 67/2013 Sb., kterým se upravují některé otázky související s poskytováním plnění spojených s užíváním bytů a nebytových prostorů v domě s byty,</li>
+<li>vyhláška č. 372/2001 Sb., kterou se stanoví pravidla pro rozúčtování nákladů na tepelnou energii na vytápění a na poskytování teplé užitkové vody mezi konečné spotřebitele,</li>
+<li>zákon č. 406/2000 Sb., o hospodaření s energií,</li>
+<li>zákon č. 274/2001 Sb., o vodovodech a kanalizacích pro veřejnou potřebu,</li>
+<li>zákon č. 185/2001 Sb., o odpadech,</li>
+<li>vyhláška č. 428/2001 Sb., kterou se provádí zákon č. 274/2001 Sb., o vodovodech a kanalizacích pro veřejnou potřebu a o změně některých zákonů (zákon o vodovodech a kanalizacích), ve znění pozdějších předpisů.</li>
+</ul>
+<p>Na okraj ještě upozorňujeme na změny provedené v zákoně č. 549/1991 Sb., o soudních poplatcích. Z tohoto zákona bylo vyňato osvobození od soudních poplatků pro společenství vlastníků. Za první zápis společenství vlastníků do rejstříku společenství vlastníků jednotek se tak vybere 6000 Kč, za každou změnu 2000 Kč (položka 11 přílohy).</p>
+<h4>II. Dopad nové právní úpravy pro společenství vlastníků vzniklá před 1. 1. 2014</h4>
+<p>Právní povaha právnických osob (tedy rovněž společenství vlastníků) se řídí ustanoveními nového občanského zákoníku ode dne nabytí jeho účinnosti (§ 3041 odst. 1 o. z.) <strong>Novým občanským zákoníkem se tak budou řídit nejen společenství vlastníků vzniklá po 1. 1. 2014, ale rovněž společenství vlastníků vzniklá do 31. 12. 2013. Tato společenství vlastníků pak mají povinnost do tří let ode dne nabytí účinnosti nového občanského zákoníku přizpůsobit své stanovy jeho donucujícím ustanovením</strong>. Neučiní-li tak, soud je k tomu vyzve a stanoví jim ve výzvě dodatečnou přiměřenou lhůtu, uplyne-li tato lhůta marně, soud může společenství vlastníků uložit pokutu. Sankce v podobě zrušení společenství vlastníků zřejmě nepřipadá v úvahu v případě povinnosti existence této právnické osoby ze zákona.</p>
+<p>Svůj název musí společenství vlastníků přizpůsobit požadavkům o. z. do dvou let ode dne nabytí jeho účinnosti. Není povinné tak učinit tehdy, jsou-li pro to důležité důvody, zejména užívá-li svůj název dlouhodobě a je-li pro ně tak příznačný, že jeho zaměnitelnost nebo klamavost nelze rozumně předpokládat (§ 3042 o. z.).</p>
+<p>Speciální skupinu tvoří společenství vlastníků vzniklá před 1. 1. 2014 ex lege, na základě právních skutečností uvedených v § 9 odst. 3 a 4 zák. o vlastnictví bytů nebo dnem účinnosti zákona č. 103/2000 Sb., která doposud nepřijala vlastní stanovy, a proto se jejich právní poměry řídí vzorovými stanovami vydanými nařízením vlády. <strong>Podle výkladového stanoviska Expertní skupiny Komise pro aplikaci nové civilní legislativy při Ministerstvu spravedlnosti,</strong><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn1">[1]</a><strong> mohou tato společenství vlastníků i po nabytí účinnosti nového občanského zákoníku nadále vycházet ze vzorových stanov vydaných nařízením vlády č. 371/2004 Sb.</strong>, i když byl tento právní předpis nabytím účinnosti nového občanského zákoníku zrušen. Tyto vzorové stanovy se u těchto společenství vlastníků staly součástí jejich vnitřních právních poměrů.</p>
+<p>V této souvislosti upozorňujeme na skutečnost, že <strong>stanovy společenství vlastníků vyžadují formu veřejné listiny. To neplatí, zakládá-li se společenství vlastníků prohlášením o rozdělení práva k domu a pozemku na vlastnické právo k jednotkám ujednáním ve smlouvě o výstavbě</strong> (§ 1200 odst. 3o. z.). Vyžaduje-li zákon pro právní jednání určitou formu, lze obsah právního jednání změnit projevem vůle v téže nebo přísnější formě (§ 564 o. z.).</p>
+<p>Pokud tedy bude o změně stanov rozhodovat na svém zasedání shromáždění, musí být o tomto rozhodnutí pořízen notářský zápis. K formě plné moci k zastoupení na orgánu právnické osoby vydala Komise pro aplikaci nové civilní legislativy při Ministerstvu spravedlnosti stanovisko,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn2">[2]</a> podle kterého <strong>pokud je stanovena povinnost pořizovat notářský zápis o rozhodnutí orgánu právnické osoby, nevyplývá z této povinnosti požadavek udělit k účasti na rozhodování tohoto orgánu plnou moc ve formě notářského zápisu.</strong> K zakotvení práva vlastníka jednotky nechat se na zasedání shromáždění zastoupit na základě plné moci dále srovnej rozhodnutí Nejvyššího soudu, NS sp. zn. 29 Cdo 3399/2010, podle kterého ze zákona neplyne oprávnění vlastníka jednotky nechat se na shromáždění vlastníků jednotek zastoupit, nicméně Nejvyšší soud je přesvědčen, že takové právo vlastníka jednotky mohou založit stanovy společenství.</p>
+<h4>III. Možnost odchylné právní úpravy ve stanovách</h4>
+<p>Podle důvodové zprávy se u nového občanského zákoníku klade důraz na dispozitivnost ustanovení, tedy možnost, aby si osoby uspořádaly soukromá práva a povinnosti odchylně od zákonné úpravy. Kogentní ustanovení, od kterých se nelze odchýlit, mají být v o. z. výjimečná.</p>
+<p>Z § 1 odst. 2 o. z. vyplývá, že si osoby mohou ujednat práva a povinnosti odchylně od zákona, nedojde-li tím k porušení:</p>
+<ul>
+<li>výslovného zákonného zákazu,</li>
+<li>dobrých mravů,</li>
+<li>veřejného pořádku,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn3">[3]</a></li>
+<li>práv týkajících se postavení osob, včetně práva na ochranu osobnosti.</li>
+</ul>
+<p>Pro tu část právních pravidel, která jsou obsažena v části třetí nového občanského zákoníku, se však lze odchýlit ujednáním s účinky vůči třetím osobám, jen připouští-li to zákon (§ 978 o. z.).</p>
+<p>U každého ustanovení zákona tedy bude nutné zvážit, zda je kogentní nebo dispozitivní s ohledem na shora uvedená pravidla. Mnohdy si budeme muset počkat, v případě nejednoznačného výkladu o dispozitivnosti nebo kogentnosti, až na názor soudu. V této souvislosti je jistě vítanou aplikační „pomůckou“ názor velkého senátu Nejvyššího soudu <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn4">[4]</a> podle kterého „... při pochybnostech, zda je občanskoprávní norma kogentního nebo dispozitivního charakteru, je třeba dát v souladu se zásadami, kterými jsou občanské právo a občanský zákoník ovládány (srov. zejména princip obecné svobody – autonomie jednání zakotvený v článku 2 odst. 3 Listiny základních práv a svobod), přednost závěru, že norma má dispozitivní charakter.“</p>
+<h4>IV. Vybrané problémy, týkající se vzniku společenství vlastníků a tvorby jejich stanov</h4>
+<p>Podle nové právní úpravy vznikají společenství vlastníků zápisem do rejstříku společenství vlastníků jednotek. Vzniku předchází založení, tedy aktivní úkon vlastníků bytových jednotek. <strong>Společenství vlastníků již nebudou vznikat bez dalšího, po splnění zákonem stanovených podmínek, jako tomu bylo doposud, ale v důsledku právního jednání jeho budoucích členů.</strong> Nepůjde-li o případ upravený v zákoně č. 311/2013 Sb., bude ke schválení stanov nutná jednomyslnost (§ 1200 odst. 1 o. z.). Nově jsou vlastníci jednotek nuceni k založení společenství vlastníků tím, že pokud nevyhoví zákonnému příkazu, dojde k blokaci převodů vlastnického práva k jednotkám (§ 1198 odst. 2 o. z., k tomu dále srovnej výkladové stanovisko Expertní skupiny Komise pro aplikaci nové civilní legislativy při Ministerstvu spravedlnosti <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn5">[5]</a>).</p>
+<p>Dalším motivačním prvkem pro zakládání společenství vlastníků i v těch domech, kde vznik společenství vlastníků není obligatorní (§ 1199 o. z.), je ručení členů společenství vlastníků v poměru podle velikosti svého podílu na společných částech (§ 1194 odst. 2 o. z.) na rozdíl od solidární odpovědnosti (běžných) spoluvlastníků společné věci podle § 1127 o. z.</p>
+<p><strong>Dle § 1185 odst. 2 o. z. bude nutné, aby spoluvlastníci jednotky zmocnili společného zástupce</strong>, který bude vykonávat jejich práva vůči osobě odpovědné za správu domu. To platí i v případě manželů, kteří mají jednotku ve společném jmění. S ohledem na právní jistotu a předcházení sporům lze doporučit písemnou formu plné moci. Obecně se užijí ustanovení o zastoupení a plné moci podle § 436-449 o. z. O ustanovení společného zástupce a o vzájemných právech a povinnostech bude zřejmě platit přiměřeně ustanovení § 1134-1138 o. z. o správci společné věci. Podle některých názorů <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn6">[6]</a> nemusí být zástupcem spoluvlastník jednotky. V případě, že je mezi spoluvlastníky spor o určení společného zástupce, uplatní se § 1139 odst. 2 o. z.</p>
+<p>V případě manželů, kteří mají jednotku ve společném jmění, se pro případ neshody mezi nimi užije ustanovení o správě majetku v zákonném režimu dle § 713 a násl. o. z. (zejména § 714 odst. 1 o. z.), správě majetku ve smluveném režimu dle § 722 a násl. o. z. nebo správě majetku v režimu založeném rozhodnutím soudu dle § 728 o. z. Zřejmě spíše výjimečně bude rozhodování spadat pod záležitosti nemajetkové povahy upravené v § 693-695 o. z.</p>
+<p>Rovněž úprava statutárního orgánu doznala změn. <strong>Dle nového občanského zákoníku je statutárním orgánem výbor, ledaže stanovy určí, že je statutárním orgánem předseda společenství vlastníků</strong>. Nejde pouze o terminologickou změnu, kdy původní „pověřený vlastník“ je nahrazen současným „předsedou společenství vlastníků.“ Domníváme se, že nová právní úprava stanoví jasný požadavek, aby stanovy určily, zda statutárním orgánem je výbor, nebo předseda společenství vlastníků, na rozdíl od benevolentnějšího zákona o vlastnictví bytů, podle kterého v případě, že nebyl zvolen výbor, pověřil shromáždění výkonem jeho funkcí pověřeného vlastníka a ve stanovách tak mohla být obsažena alternativa statutárního orgánu. S ohledem na dosud neexistující soudní praxi, je však možné, že toto ustanovení bude vyloženo opačně. Pokud však chtějí mít zakladatelé společenství vlastníků jistotu, že jejich společenství vlastníků bude zapsáno do rejstříků společenství vlastníků, je vhodnější akceptovat přísnější výklad zákona.</p>
+<p>Počet členů výboru musí být ve stanovách určen zcela určitě, nepřípustné je určení jen minimálním počtem – např. výbor má nejméně tři členy.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn7">[7]</a> Na rozdíl od právní úpravy, platné do 31. 12. 2013, <strong>není stanoven minimální počet. U funkčního období člena statutárního orgánu odpadla maximální hranice. Je tak na zvážení členů shromáždění, jakou délku do stanov zakotví.</strong> Není-li stanoveno jinak, zastupují členové výboru společenství vlastníků každý samostatně, nikoliv pouze předseda výboru. Členem statutárního orgánu již nemusí být člen společenství vlastníků.</p>
+<p>Dosavadní brzdou pro rozdělení některých domů ve vlastnictví bytových družstev na jednotky, jejich převod do vlastnictví členům těchto družstev a vzniku společenství vlastníků, byla obava ze ztíženého prosazení zásadních rozhodnutí v nejvyšším orgánu. Na rozdíl od členské schůze bytového družstva rozhodovalo shromáždění vlastníků podle zákona o vlastnictví bytů o zásadních otázkách nesrovnatelně vyššími většinami.</p>
+<p>Podle nového občanského zákoníku (§ 1206 odst. 2 o. z.) <strong>je shromáždění způsobilé usnášet se za přítomnosti vlastníků jednotek, kteří mají většinu všech hlasů. K přijetí rozhodnutí se vyžaduje souhlas většiny hlasů přítomných vlastníků jednotek, nepožadují-li stanovy nebo zákon vyšší počet hlasů.</strong> Výkladový problém nastane snad jen v situaci, kdy se budou měnit stanovy. K jejich schválení při založení společenství vlastníků je třeba souhlasu vlastníků všech jednotek. Nabízí se tedy otázka, zda i k jejich změně je nutná tato drakonická většina, nebo zda postačí prostá většina přítomných, případně kvalifikovaná většina určená stanovami. Odborná literatura se této problematice výslovně nevěnuje,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn8">[8]</a> ale z jejího obsahu lze vyvodit, že nepovažuje pro změnu stanov nutnou stoprocentní většinu. Je nepochybné, že požadavek stoprocentní většiny by v řadě společenství vlastníků jakoukoliv změnu stanov přijetím rozhodnutí na zasedání shromáždění znemožnil.</p>
+<p>Další novinkou je pak možnost shromáždění, za podmínek stanovených v § 1210 o. z., rozhodovat mimo zasedání tzv. hlasováním per rollam, které podle některých výkladů dosavadní právní úpravy možné nebylo.</p>
+<p><strong>Nově tvoří jednu z povinných obsahových náležitostí stanov určení pravidel pro správu domu a pozemku a pro užívání společných částí domu.</strong> Doposud se tato pravidla vyskytovala v tzv. domovních řádech. Lze v nich řešit umísťování vývěsek, označení správce domu, pravidla pro úklid domu a podobně. Vzhledem ke skutečnosti, že „domovní řád“ tvoří součást stanov, k jejichž změně je zapotřebí forma veřejné listiny, doporučujeme v něm upravit pouze taková pravidla, která jsou podstatná, mezi členy společenství vlastníků nesporná a jejichž změna nebude příliš častá.</p>
+<p>Shora uvedené změny jsou jen částí toho, s čím se musí vypořádat tvůrce stanov společenství vlastníků. Autoři tohoto článku připravili <strong>návrh znění stanov se zapracovanými legislativními změnami a komentářem odborné veřejnosti k jednotlivým bodům, které následují:</strong></p>
+<h4 style="text-align: center;">(návrh)</h4>
+<h4 style="text-align: center;">STANOVY<br />SPOLEČENSTVÍ VLASTNÍKŮ .................. </h4>
+<h4 style="text-align: center;">  ČÁST PRVNÍ</h4>
+<h4 style="text-align: center;">   VŠEOBECNÁ USTANOVENÍ</h4>
+<h4 style="text-align: center;">Čl. I</h4>
+<h4 style="text-align: center;">Základní ustanovení</h4>
+<p><strong>(1)</strong> Společenství vlastníků je právnickou osobou založenou za účelem zajišťování správy domu a pozemku; při naplňování svého účelu je způsobilé nabývat práva a zavazovat se k povinnostem. Společenství vlastníků nesmí podnikat ani se přímo či nepřímo podílet na podnikání nebo jiné činnosti podnikatelů nebo být jejich společníkem nebo členem.</p>
+<p><strong>(2)</strong> Společenství vlastníků je založeno za účelem správy bytového domu č. p ... v části obce ....., který tvoří součást pozemku parc. č. ....... , v katastrálním území ................., jenž je zapsán v katastru nemovitostí vedeném Katastrálním úřadem pro ............. kraj, Katastrální pracoviště............. na listu vlastnictví číslo .............. pro obec a katastrální území ............ a za účelem správy shora uvedeného pozemku.</p>
+<p><strong>(3)</strong> Vlastnické právo k jednotkám ve shora uvedeném domě s byty nabyli všichni vlastníci podle zákona č. 72/1994 Sb., kterým se upravovaly některé spoluvlastnické vztahy k budovám a některé vlastnické vztahy k bytům a nebytovým prostorům a doplňovaly se některé zákony (zákon o vlastnictví bytů), tento zákon také vymezuje pojmy byt a nebytový prostor. Jednotkou se rozumí byt nebo nebytový prostor jako vymezená část domu uvedeného v odst. 2 tohoto článku stanov.</p>
+<p><strong>nebo</strong></p>
+<p>Vlastnické právo k jednotkám ve shora uvedeném domě s byty nabyli všichni vlastníci podle zákona č. 89/2012 Sb., občanský zákoník. Jednotka zahrnuje byt jako prostorově oddělenou část domu a podíl na společných částech nemovité věci uvedené v odst. 2 tohoto článku stanov vzájemně spojené a neoddělitelné.</p>
+<p><strong>(4)</strong> Společenství vlastníků vzniká dnem zápisu do rejstříku společenství vlastníků jednotek vedeném příslušným soudem určeným zvláštním předpisem.</p>
+<p><strong>nebo</strong></p>
+<p>Společenství vlastníků vzniklo 1. 7. 2000, tedy dnem nabytí účinnosti zákona č. 103/2000 Sb., když dům má pět jednotek a ke dni účinnosti tohoto zákona byly tři jednotky ve vlastnictví tří různých vlastníků, kteří je nabyli do vlastnictví přede dnem nabytí účinnosti shora uvedeného zákona, a do tohoto data jim byly doručeny listiny s doložkou o povolení vkladu do katastru nemovitostí.</p>
+<p><strong>nebo</strong></p>
+<p>Společenství vlastníků vzniklo v souladu s § 9 odst. 3 zák. č. 72/1994 Sb., kterým se upravovaly některé spoluvlastnické vztahy k budovám a některé vlastnické vztahy k bytům a nebytovým prostorům a doplňovaly se některé zákony (zákon o vlastnictví bytů), dnem doručení listiny s doložkou o vyznačení vkladu do katastru nemovitostí nebo jiné listiny, kterou příslušný státní orgán osvědčuje vlastnické vztahy k jednotce, třetímu vlastníku, tedy dne ………………… .</p>
+<p><strong>nebo</strong></p>
+<p><span style="color: #000000;">Společenství vlastníků vzniklo v souladu s § 9 odst. 4 zák. č. 72/1994 Sb., kterým se upravovaly některé spoluvlastnické vztahy k budovám a některé vlastnické vztahy k bytům a nebytovým prostorům a doplňovaly se některé zákony (zákon o vlastnictví bytů), prvním dnem kalendářního měsíce následujícího po měsíci, v němž byly družstvu uvedenému v § 24 odst. 1 a 2 zák. č. 72/1994 Sb., které bylo původním vlastníkem budovy, nebo družstvu vzniklému vyčleněním z původního družstva podle § 29 zák. č. 72/1994 Sb., a které plnilo povinnosti správce podle § 9 zák. č. 72/1994 Sb. platného před 1. 7. 2000, doručením listiny dokládající, že spoluvlastnický podíl na společných částech domu se tomuto družstvu snížil na méně než jednu čtvrtinu. Společenství vlastníků vzniklo tedy dne ...... .</span></p>
+<p><strong>(5)</strong> Společenství vlastníků je osobou odpovědnou za správu domu a pozemku.</p>
+<p><strong>(6)</strong> Společenství vlastníků může nabývat majetek a nakládat s ním pouze pro účely správy domu a pozemku. K právnímu jednání, kterým společenství vlastníků zajistí dluh jiné osoby, se nepřihlíží.</p>
+<p><strong>(7)</strong> Společenství vlastníků jedná právně v mezích svého účelu s vlastníky jednotek i s třetími osobami. Vzniknou-li vlastníkům jednotek práva vadou jednotky, zastupuje společenství vlastníků vlastníky jednotek při uplatňování těchto práv.</p>
+<p><strong>(8)</strong> Sdruží-li se společenství vlastníků s jiným společenstvím vlastníků ke spolupráci při naplňování svého účelu nebo stane-li se členem právnické osoby sdružující společenství vlastníků nebo vlastníky jednotek nebo jinak působící v oblasti bydlení, nesmí se zavázat k jiné majetkové účasti, než je poskytnutí členského vkladu nebo poskytování členských příspěvků. Zaváže-li se společenství vlastníků podílet se na ztrátě jiné osoby, hradit její dluhy nebo je zajistit, nepřihlíží se k tomu.</p>
+<p><strong><em>Komentář:</em></strong></p>
+<p><em><strong>Odst. 1:</strong> Citace § 1194 odst. 1 zákona č. 89/2012, občanský zákoník (dále jen „o. z.“).</em></p>
+<p><em><strong>Odst. 3:</strong> Podle § 3063 o. z. a podle § 3 zákona č. 256/2013 Sb. se evidují v katastru nemovitostí dva druhy jednotek, jednotky vymezené podle o. z. a jednotky vymezené podle zákona č. 72/1994 Sb.</em></p>
+<p><em><strong>Odst. 4:</strong> Od 1. 1. 2014 vzniká společenství vlastníků podle § 1204 o. z. zápisem do rejstříku společenství vlastníků jednotek a vzniku předchází založení společenství vlastníků. Společenství vlastníků vzniklá do 31. 12. 2013 vznikala na základě právních skutečností uvedených v § 9 odst. 3 a 4 zák. č. 72/1994 Sb. nebo dnem účinnosti zákona č. 103/2000 Sb.</em></p>
+<p><em>Dále je třeba poukázat na znění zákona č. 311/2013 Sb., o převodu vlastnického práva k jednotkám a skupinovým rodinným domům některých bytových družstev a o změně některých zákonů, zejména na § 24. Ten upravuje některá specifika vzniku společenství vlastníků v družstvech uvedených v § 24 odst. 1 a 2 zák. č. 72/1994 Sb. Zjednodušeně řečeno, snížil-li se podíl družstva na společných částech domu na méně než jednu <strong>čtvrtinu</strong> před 1. 1. 2014, společenství vlastníků vzniklo ze zákona podle zák. č. 72/1994 Sb. Pokud se podíl na společných částech družstva ke dni 1. 1. 2014 nesnížil na méně než jednu <strong>polovinu</strong>, stává se bytové družstvo dnem 1. 1. 2014 správcem domu a pozemku podle zák. č. 72/1994 Sb. Jakmile se podíl družstva na společných částech domu sníží po 1. 1. 2014 na méně než jednu <strong>polovinu,</strong> je družstvo povinné svolat shromáždění vlastníků jednotek k založení společenství vlastníků. </em></p>
+<p><em>Pro schválení stanov společenství vlastníků, na něž dopadá zákon č. 311/2013 Sb., postačí nadpoloviční většina hlasů vlastníků jednotek přítomných na shromáždění.</em></p>
+<p><em><strong>Odst. 5 až odst. 8:</strong> Citace § 1190, § 1195, § 1196 a § 1197 o. z. </em></p>
+<h4 style="text-align: center;">Čl. II</h4>
+<h4 style="text-align: center;">Název a sídlo</h4>
+<p><strong>(1) </strong>  Název zní: <strong>Společenství vlastníků</strong> ..................................</p>
+<p><strong>(2)</strong> Sídlem je: ……………………………………………………….</p>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em><strong>Odst. 1:</strong></em> Podle § 1200 odst. 2 písm. a) o. z. obsahuje název slovo „společenství vlastníků“ a označení domu, pro který společenství vlastníků vzniklo. Od 1. 1. 2014 tedy dochází ke změně, když podle zákona č. 72/1994 Sb. název musel obsahovat pouze slovo „společenství“. Podle § 3042 o. z. musí společenství vlastníků přizpůsobit svůj název požadavkům občanského zákoníku do dvou let ode dne nabytí jeho účinnosti. Označení domu uvedené v názvu společenství vlastníků nemusí obsahovat celou adresu sídla společenství vlastníků. Pokud společenství vlastníků vzniklo v budově, jenž má více vchodů se samostatnými čísly popisnými, tak je správné uvést v názvu společenství vlastníků všechna čísla popisná. Název společenství vlastníků musí vyhovovat rovněž požadavkům obecné úpravy názvu (§ 132 odst. 2 o. z.), musí odlišit právnickou osobu od jiné osoby a nesmí být klamavý.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn9">[9]</a></p>
+<p><em><strong>Odst. 2</strong></em>: Podle § 1200 odst. 2 písm. b) o. z. má být sídlo určené v domě, pro který společenství vlastníků vzniklo. Není-li to možné, na jiném vhodném místě.</p>
+<h4 style="text-align: center;">ČÁST DRUHÁ</h4>
+<h4 style="text-align: center;">PŘEDMĚT ČINNOSTI SPOLEČENSTVÍ VLASTNÍKŮ</h4>
+<h4 style="text-align: center;">Čl. III</h4>
+<h4 style="text-align: center;">Obecné vymezení správy domu a pozemku</h4>
+<p><strong>(1)</strong> Správa domu a pozemku zahrnuje vše, co nenáleží vlastníku jednotky a co je v zájmu všech spoluvlastníků nutné nebo účelné pro řádnou péči o dům a pozemek jako funkční celek a zachování nebo zlepšení společných částí. Správa domu zahrnuje i činnosti spojené s přípravou a prováděním změn společných částí domu nástavbou, přístavbou, stavební úpravou nebo změnou v užívání, jakož i se zřízením, udržováním nebo zlepšením zařízení v domě nebo na pozemku sloužících všem spoluvlastníkům domu.</p>
+<p><strong>(2)</strong> Správa se vztahuje i na společné části, které slouží výlučně k užívání jen některému spoluvlastníku.</p>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em>Předmět činnosti není sice uveden jako nezbytná náležitost stanov v § 1200 o. z., ale nutnost jeho uvedení vyplývá z § 120 odst. 1 a § 123 odst. 1 o. z.</em></p>
+<p><em>Zásadní zákonné vymezení správy domu upravené v § 1189 o. z. nelze modifikovat. Podle důvodové zprávy k občanskému zákoníku lze vymezit rozsah správy v rámci obecné úpravy.</em></p>
+<p><em> </em></p>
+<p style="text-align: center;"><strong>Čl. IV</strong></p>
+<p style="text-align: center;"><strong>Správa domu a pozemku z hlediska provozního a technického</strong></p>
+<p><strong>(1)</strong> Společenství vlastníků je oprávněno vykonávat činnosti týkající se správy domu a pozemku z hlediska provozního a technického, kterými se rozumí zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">provoz, údržba, opravy, stavební úpravy a jiné změny společných částí domu, včetně změn vedoucích ke změně v účelu jejich užívání; týká se to také všech technických zařízení domu, jako společných částí, dále společných částí vyhrazených k výlučnému užívání vlastníku jednotky, pokud podle prohlášení nebo stanov společenství vlastníků nejde o činnost příslušející vlastníku jednotky v rámci správy této společné části na vlastní náklady,</li>
+<li style="list-style-type: lower-alpha;">revize technických sítí, společných technických zařízení domu, protipožárního zařízení, hromosvodů, rozvodů energií včetně tepla, teplé vody, pitné vody a telekomunikačních zařízení, a jiných společných zařízení podle technického vybavení domu,</li>
+<li style="list-style-type: lower-alpha;">údržba pozemku a údržba přístupových cest na pozemku,</li>
+<li style="list-style-type: lower-alpha;">uplatnění práva vstupu do bytu v případě, že vlastník jednotky upravuje stavebně svůj byt, včetně možnosti požadovat v odůvodněných případech předložení stavební dokumentace, pokud je podle jiných právních předpisů vyžadována, pro ověření, zda stavební úpravy neohrožují, nepoškozují nebo nemění společné části domu.</li>
+</ol>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em>Upraveno v § 7 nařízení vlády č. 366/2013 Sb., o úpravě některých záležitostí souvisejících s bytovým spoluvlastnictvím.</em></p>
+<h4 style="text-align: center;">Čl. V</h4>
+<h4 style="text-align: center;">Správa domu a pozemku z hlediska správních činností</h4>
+<p><strong>(1)</strong> Společenství vlastníků je oprávněno vykonávat činnosti týkající se správy domu a pozemku z hlediska správních činností, kterými se rozumí zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">zajišťování veškeré správní, administrativní a operativně technické činnosti, včetně vedení příslušné technické a provozní dokumentace domu, uchovávání dokumentace stavby odpovídající jejímu skutečnému provedení podle jiných právních předpisů,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn10">[10]</a></li>
+<li style="list-style-type: lower-alpha;">stanovení a vybírání předem určených finančních prostředků od vlastníků jednotek jako záloh na příspěvky na správu domu a pozemku, stanovení záloh na úhrady cen služeb a jejich vyúčtování a vypořádání,</li>
+<li style="list-style-type: lower-alpha;">vedení účetnictví, zpracování a předložení daňových přiznání, řádné hospodaření s finančními prostředky, vedení seznamu členů společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">uplatňování a vymáhání plnění povinností vůči jednotlivým vlastníkům jednotek, které jim ukládají právní předpisy nebo vyplývají ze stanov společenství vlastníků a z usnesení shromáždění v souladu s právními předpisy a se stanovami společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">činnosti spojené s provozováním společných částí a technických zařízení, která slouží i jiným osobám než vlastníkům jednotek v domě, včetně sjednávání s tím souvisejících smluv,</li>
+<li style="list-style-type: lower-alpha;">výkon činností vztahujících se k uplatňování ochrany práv vlastníků jednotek.</li>
+</ol>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em>Upraveno v § 8 nařízení vlády č. 366/2013 Sb.</em></p>
+<p style="text-align: center;"><strong>Čl. VI</strong></p>
+<p style="text-align: center;"><strong>Oprávnění sjednávat smlouvy</strong></p>
+<p><strong>(1)</strong> Pro účely správy domu a pozemku je společenství vlastníků oprávněno sjednávat smlouvy týkající se zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">zajištění činností spojených se správou domu a pozemku,</li>
+<li style="list-style-type: lower-alpha;">zajištění dodávek služeb spojených s užíváním společných částí a spojených s užíváním jednotek, nejde-li o služby, jejichž dodávky si vlastníci jednotek zajišťují u dodavatele přímo,</li>
+<li style="list-style-type: lower-alpha;">pojištění domu,</li>
+<li style="list-style-type: lower-alpha;">nájmu společných částí domu, a</li>
+<li style="list-style-type: lower-alpha;">zajištění provozu vybraných technických zařízení spojených s užíváním společných částí domu a s užíváním jednotek, ke kterým nemá společenství vlastníků oprávnění je provozovat, jako jsou domovní kotelny, výměníkové (předávací) stanice, dieselagregáty a podobná vyhrazená technická zařízení.</li>
+</ol>
+<p><strong>(2)</strong> Společenství vlastníků dohlíží na plnění uzavřených smluv a vymáhá nároky z porušení povinností druhé smluvní strany.</p>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em>Upraveno v § 10 nařízení vlády č. 366/2013 Sb.</em></p>
+<h4 style="text-align: center;">Čl. VII</h4>
+<h4 style="text-align: center;">Zajišťování správy domu a dalších činností na základě smlouvy se správcem</h4>
+<p><strong>(1)</strong> V souladu s prohlášením vlastníka budovy o osobě pověřené správou domu (dále jen „správce“), anebo v souladu s usnesením shromáždění o určení osoby správce, může společenství vlastníků zajišťovat provozní, technické, správní a obdobné činnosti spojené se správou domu a pozemku a s dalšími činnostmi, popřípadě některé z těchto činností, na základě smlouvy se správcem, kterým může být fyzická nebo právnická osoba.</p>
+<p><strong>(2)</strong> Smlouva se správcem obsahuje:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">vymezení činností, které bude správce vykonávat,</li>
+<li style="list-style-type: lower-alpha;">cenu za služby poskytované správcem,</li>
+<li style="list-style-type: lower-alpha;">určení způsobu hospodaření s příspěvky na správu domu a pozemku a s finančními prostředky poskytovanými na úhradu služeb včetně jejich evidence,</li>
+<li style="list-style-type: lower-alpha;">povinnost správce předkládat jím uzavírané smlouvy nebo jejich změny předem ke schválení orgánu společenství vlastníků příslušnému podle těchto stanov, pokud byl správce společenstvím vlastníků zmocněn k jejich uzavírání,</li>
+<li style="list-style-type: lower-alpha;">povinnost správce předložit jednou ročně shromáždění zprávu o činnosti správce, zejména o finančním hospodaření, o stavu finančních prostředků každého vlastníka jednotky a o stavu společných částí domu, jakož i o jiných významných skutečnostech,</li>
+<li style="list-style-type: lower-alpha;">povinnost správce před ukončením jeho činnosti podat shromáždění zprávu o své činnosti a předat výboru všechny písemné materiály o správě domu a své činnosti,</li>
+<li style="list-style-type: lower-alpha;">povinnost správce umožnit každému vlastníku jednotky nahlédnout a seznámit se s listinami uvedenými v čl. X odst. 1 stanov a vykonávat práva člena společenství vlastníků, za podmínek stanovených stanovami,</li>
+<li style="list-style-type: lower-alpha;">další náležitosti stanovené shromážděním.</li>
+</ol>
+<p><strong>(3)</strong> Změny osoby správce nebo změny obsahu smlouvy v ujednání o ceně nebo o rozsahu činnosti se správcem schvaluje shromáždění.</p>
+<p><strong>(4)</strong> Uzavřením smlouvy se správcem podle odstavců 1 až 3 nemůže být dotčena výlučná rozhodovací působnost orgánů společenství vlastníků plynoucí z právních předpisů a z těchto stanov.</p>
+<p><em><strong>Komentář:</strong></em></p>
+<p><em>Společenství vlastníků, pokud vzniklo, je osobu odpovědnou za správu domu a pozemku (§ 1190 o. z.). Výkon svých povinností může společenství vlastníků zajišťovat prostřednictvím jiných osob, kterými může být tzv. správce. Na rozdíl od úpravy smlouvy se správcem obsažené ve vzorových stanovách společenství vlastníků jednotek, vydaných nařízením vlády č. 371/2004 Sb., doporučujeme do náležitostí této smlouvy doplnit v odst. 2 písm. b) cenu za služby poskytované správcem v souladu s § 1208 písm. h) o. z. a písm. g) odpovídající čl. X. stanov.</em></p>
+<p><em>V následujícím textu se pracuje s výborem jako se statutárním orgánem společenství vlastníků. Bude-li zvolena varianta s předsedou společenství vlastníků, je nutné v celém textu slovo „výbor“ zaměnit za sousloví „předseda společenství vlastníků“.</em></p>
+<h4 style="text-align: center;">ČÁST TŘETÍ</h4>
+<h4 style="text-align: center;">ČLENSTVÍ VE SPOLEČENSTVÍ VLASTNÍKŮ</h4>
+<h4 style="text-align: center;">ČLENSKÁ PRÁVA A POVINNOSTI</h4>
+<h4 style="text-align: center;">Čl. VIII</h4>
+<h4 style="text-align: center;">Vznik členství</h4>
+<p><strong>(1)</strong>   Členství ve společenství vlastníků je neoddělitelně spojeno s vlastnictvím jednotky.</p>
+<p><strong>(2)</strong>   Za dluhy společenství vlastníků ručí jeho člen v poměru podle velikosti svého podílu na společných částech.</p>
+<p><strong>(3)</strong> Členy společenství vlastníků se stávají fyzické i právnické osoby, které nabyly vlastnictví k jednotce v domě, pro který společenství vlastníků vzniklo. Jejich členství vzniká:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">dnem vzniku společenství vlastníků v případech, kdy tyto osoby nabyly vlastnictví k jednotce nejpozději dnem vzniku společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">dnem nabytí vlastnictví k jednotce v případech, kdy tyto osoby nabyly vlastnictví k jednotce po dni vzniku společenství vlastníků.</li>
+</ol>
+<p><em>Komentář:</em></p>
+<p><em><strong>Odst. 1 a 2:</strong> Upraveno v § 1194 odst. 2 o. z. Jedná se o speciální úpravu ve vztahu k § 1127 o. z., který se v tomto případě nepoužije. Tato úprava ručení je podle důvodové zprávy motivací k zakládání společenství vlastníků mimo jiné také v případě, kdy je jeho založení dobrovolné (§ 1199 o. z.). </em></p>
+<h4 style="text-align: center;">Čl. IX. </h4>
+<h4 style="text-align: center;">Seznam členů společenství vlastníků </h4>
+<p><strong>(1)</strong> Společenství vlastníků vede seznam členů společenství vlastníků. V seznamu členů společenství vlastníků musí být u každého člena společenství vlastníků uvedeno:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">jméno a příjmení,</li>
+<li style="list-style-type: lower-alpha;">datum narození,</li>
+<li style="list-style-type: lower-alpha;">adresa místa trvalého pobytu, uvedená ve výpisu z katastru nemovitostí dokládající vlastnické právo k pozemku a domu,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn11">[11]</a></li>
+<li style="list-style-type: lower-alpha;">doručovací adresa, na které vlastník jednotky přebírá poštu, (dále jen doručovací adresa), v případě, že není shodná s adresou místa trvalého pobytu,</li>
+<li style="list-style-type: lower-alpha;">společný zástupce, v případě spoluvlastnictví jednoty, nebo jednotky ve společném jmění manželů,  </li>
+<li style="list-style-type: lower-alpha;">váha hlasu při hlasování na shromáždění ve vztahu k jednotce.  </li>
+</ol>
+<p><strong>(2)</strong> Seznam členů společenství vlastníků je zpřístupněn členům společenství vlastníků způsobem uvedeným v čl. X odst. 2 stanov.  </p>
+<p><strong>(3)</strong> Členy společenství vlastníků, jejichž členství vznikne za trvání společenství vlastníků, zapíše společenství vlastníků do seznamu členů společenství vlastníků neprodleně poté, kdy člen společenství vlastníků oznámí prokazatelně nabytí vlastnictví jednotky, nebo kdy se společenství vlastníků dozví o této skutečnosti jiným způsobem. </p>
+<p><strong>(4)</strong> Každý člen, a to i bývalý, obdrží na svou žádost od společenství vlastníků na jeho náklady potvrzení s výpisem ze seznamu členů obsahující údaje o své osobě, popřípadě potvrzení, že tyto údaje byly vymazány. Namísto zemřelého člena může o potvrzení požádat jeho manžel, dítě nebo rodič, a není-li žádný z nich, může o vydání potvrzení žádat jiná osoba blízká nebo dědic, prokáží-li zájem hodný právní ochrany.  </p>
+<p><strong>(5)</strong> Seznam členů může být uveřejněn se souhlasem všech členů, kteří jsou v něm zapsáni. Při uveřejnění neúplného seznamu členů musí být z něho patrné, že je neúplný.  </p>
+<p><em><strong>Komentář </strong></em></p>
+<p><em>Vedení seznamu členů je upraveno v § 236 o. z. Ve stanovách je možné upravit, jak seznam členů bude zpřístupněn členům a třetím osobám, případně zda bude toto zpřístupnění omezeno nebo vyloučeno. Každý může zjistit údaje o vlastnících na katastrálním úřadu, nebo na <a href="http://www.cuzk.cz/">www.cuzk.cz</a>, zde však není uvedeno datum narození a doručující adresa, proto se navrhuje zpřístupnění tohoto seznamu pouze členům. Problematika společného zástupce je upravena v čl. XI stanov.  </em></p>
+<h4 style="text-align: center;">Čl. X </h4>
+<h4 style="text-align: center;">Členská práva a povinnosti </h4>
+<p><strong>(1)</strong> Člen společenství vlastníků má práva vlastníka jednotky a člena společenství vlastníků uvedená v příslušných ustanoveních právních předpisů a těchto stanov a má zejména právo:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">účastnit se veškeré činnosti společenství vlastníků způsobem a za podmínek stanovených právními předpisy a těmito stanovami,</li>
+<li style="list-style-type: lower-alpha;">účastnit se jednání shromáždění, požadovat a dostat na něm vysvětlení záležitostí, hlasováním se podílet na rozhodování shromáždění,</li>
+<li style="list-style-type: lower-alpha;">volit a být volen do orgánů společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">předkládat orgánům společenství vlastníků návrhy a podněty ke zlepšení činnosti společenství vlastníků a k odstranění nedostatků v jejich činnosti,</li>
+<li style="list-style-type: lower-alpha;">obdržet vyúčtování záloh na úhradu jednotlivých služeb, nejpozději do čtyř měsíců od skončení zúčtovacího období, přičemž splatnost případných přeplatků, je nejpozději do sedmi měsíců od skončení zúčtovacího období,</li>
+<li style="list-style-type: lower-alpha;">nahlížet do písemných podkladů pro jednání shromáždění, do zápisu ze zasedání shromáždění, do smluv sjednaných společenstvím vlastníků a do podkladů, z nichž vychází určení výše jeho povinnosti podílet se na nákladech spojených se správou domu a pozemku a s dodávkou služeb spojených s užíváním jednotky,</li>
+<li style="list-style-type: lower-alpha;">seznámit se, jak společenství vlastníků hospodaří a jak dům nebo pozemek spravuje,</li>
+<li style="list-style-type: lower-alpha;">nahlížet do účetních knih a dokladů společenství vlastníků. </li>
+</ol>
+<p><strong>(2)</strong> V případě, že člen společenství vlastníků chce uplatnit své právo a nahlédnout a seznámit se s listinami uvedenými v čl. X odst. 1 stanov, bude domluven takový způsob uplatnění tohoto práva, který bude vyhovovat jak společenství vlastníků, tak členu společenství vlastníků, případně osobě, která na základě smlouvy zajišťuje činnosti spojené se správou domu. V případě, že způsob uplatnění tohoto práva nebude dohodnut, rozhodne o způsobu uplatnění práva shromáždění. </p>
+<p><strong>(3)</strong> Člen společenství vlastníků má povinnosti vlastníka jednotky a člena společenství vlastníků uvedené v příslušných ustanoveních právních předpisů a těchto stanovách, zejména má povinnost</p>
+<ol>
+<li style="list-style-type: lower-alpha;">dodržovat tyto stanovy a plnit usnesení orgánů společenství vlastníků schválená v souladu se právními předpisy a těmito stanovami,</li>
+<li style="list-style-type: lower-alpha;">řídit se pravidly pro správu domu a pro užívání společných částí, pokud byl s těmito pravidly seznámen nebo pokud je měl a mohl znát, jakož i zajistit jejich dodržování osobami, jimž umožnil přístup do domu nebo bytu,</li>
+<li style="list-style-type: lower-alpha;">hradit stanovené příspěvky na správu domu a pozemku,</li>
+<li style="list-style-type: lower-alpha;">hradit stanovené zálohy na úhradu za služby a hradit nedoplatky vyplývající z vyúčtování,</li>
+<li style="list-style-type: lower-alpha;">řídit se při užívání společných částí domu, pozemku a společných zařízení domu právními předpisy a pokyny výrobce nebo správce technických zařízení,</li>
+<li style="list-style-type: lower-alpha;">udržovat svůj byt, jak to vyžaduje nezávadný stav a dobrý vzhled domu; to platí i o společných částech, které má vlastník jednotky vyhrazeny ve výlučném užívání,</li>
+<li style="list-style-type: lower-alpha;">odstranit na svůj náklad závady a poškození, které na jiných jednotkách nebo na společných částech domu a pozemku způsobil sám nebo ti, kteří s ním jednotku užívají,</li>
+<li style="list-style-type: lower-alpha;">předat výboru ověřenou projektovou dokumentaci v případě, že provádí změnu stavby a vyjádření příslušného stavebního úřadu, případně rozhodnutí, bylo-li vydáno.  </li>
+</ol>
+<p><strong>(4)</strong> Člen společenství vlastníků má právo svobodně spravovat, výlučně užívat a uvnitř stavebně upravovat svůj byt, jakož i užívat společné části domu, nesmí však ztížit jinému vlastníku jednotky výkon stejných práv ani ohrozit, změnit nebo poškodit společné části. </p>
+<p><strong>(5)</strong> Neplní-li vlastník jednotky povinnost udržovat byt tak, jak to vyžaduje nezávadný stav domu, a přímo hrozí nebezpečí, že dojde k poškození jiného bytu, je společenství vlastníků oprávněno činit opatření ke zjednání nápravy i v případě, že nejde o ohrožení nezávadného stavu domu jako celku. Právo vlastníka jednotky činit opatření k nápravě tím není dotčeno. </p>
+<p><strong>(6)</strong> Upravuje-li vlastník jednotky stavebně svůj byt, umožní do bytu přístup pro ověření, zda stavební úpravy neohrožují, nepoškozují nebo nemění společné části, pokud byl k tomu předem vyzván společenstvím vlastníků. </p>
+<p><strong>(7)</strong> Vlastník jednotky se zdrží všeho, co brání údržbě, opravě, úpravě, přestavbě či jiné změně domu nebo pozemku, o nichž bylo řádně rozhodnuto, jsou-li prováděny uvnitř bytu nebo na společné části, která slouží výlučně k užívání vlastníka jednotky, umožní do nich přístup, pokud byl k tomu předem vyzván společenstvím vlastníků. To platí i pro umístění, údržbu a kontrolu zařízení pro měření spotřeby vody, plynu, tepla a jiných energií, a pro odečet naměřených hodnot. </p>
+<p><strong>(8)</strong> Při poškození jednotky prováděním prací podle čl. X. odst. 7 stanov, nahradí vlastníku jednotky škodu společenství vlastníků. Prováděl-li však tyto práce ve svém zájmu jen některý vlastník jednotky, nahradí škodu sám.  </p>
+<p><strong>(9)</strong> Kdo nabyl jednotku do vlastnictví, oznámí to včetně své adresy místa trvalého pobytu, doručovací adresy a počtu osob, které budou mít v bytě domácnost, společenství vlastníků nejpozději do jednoho měsíce ode dne, kdy se dozvěděl nebo mohl dozvědět, že je vlastníkem. To obdobně platí i v případě změny údajů uvedených v oznámení. </p>
+<p><strong>(10)</strong> Vlastník jednotky oznámí bez zbytečného odkladu společenství vlastníků změny v počtu osob, které mají v bytě domácnost a bydlí v něm po dobu, která činí v souhrnu nejméně tři měsíce v jednom kalendářním roce. To platí i tehdy, přenechal-li vlastník jednotky byt k užívání jiné osobě; v takovém případě oznámí i jméno a doručovací adresu této osoby. </p>
+<p><strong>(11)</strong> Požádá-li o to vlastník jednotky, sdělí mu společenství vlastníků jméno a doručovací adresu kteréhokoli vlastníka nebo nájemce v domě. </p>
+<p><strong>(12)</strong> Na návrh společenství vlastníků nebo dotčeného vlastníka jednotky může soud nařídit prodej  jednotky toho vlastníka, který porušuje povinnost uloženou mu vykonatelným rozhodnutím soudu způsobem podstatně omezujícím nebo znemožňujícím práva ostatních vlastníků jednotek. </p>
+<p><em><strong>Komentář: </strong></em></p>
+<p><em>Odst. 1 a 2: Odst. 1 písm. b) upraven v souladu s § 251 písm. g) a h) o. z. v souladu s § 1179 o. z. V písm. e) jsou doplněny lhůty v souladu s § 1181 o. z, lze je dohodnout jinak. Podle důvodové zprávy by měly stanovy, případně další listiny, v kterých jsou upravena pravidla správy (prohlášení o rozdělení domu na jednotky, smlouvy o výstavbě), upravit způsob výkonu shora uvedených práv. V případě, že takto určen nebude, uplatní se obecná pravidla stanovená pro soukromý styk. Zejména jde o zásady, že subjektivní právo lze uplatnit jen při poctivém dodržování dobrých mravů se zřetelem k zvyklostem soukromého života a že se zjevnému zneužití práva odnímá právní ochrana. To platí jak pro vlastníka jednotky, tak pro společenství vlastníků, které nesmí určit pro výkon práv vlastníka jednotky způsob tak omezující, aby jej hrubě ztížila nebo podstatně vyloučila. Odst. 2 je navrhován jako jedna z možností, vždy bude záležet na konkrétním fungování společenství vlastníků, tzn., zda některé povinnosti plní prostřednictvím jiných osob, nebo je zajišťuje výlučně svými orgány.</em></p>
+<p><em><strong>Odst. 3 a 4</strong>: Upraveno v souladu s § 1175 a § 1176 o. z.</em></p>
+<p><em><strong>Odst. 5:</strong> Citace čl. 9 nařízení vlády č. 366/2013 Sb.</em></p>
+<p><em><strong>Odst. 6 až 12:</strong> Upraveno v § 1182, 1183, 1177, 1178 a 1184 o. z. </em></p>
+<h4 style="text-align: center;"><strong>Čl. XI </strong></h4>
+<h4 style="text-align: center;">Spoluvlastnictví jednotky </h4>
+<p><strong>(1)</strong> Vlastník jednotky může své právo k jednotce rozdělit na podíly.  </p>
+<p><strong>(2) </strong>Spoluvlastníci jednotky zmocní společného zástupce, který bude vykonávat jejich práva vůči společenství vlastníků. To platí i v případě manželů, kteří mají jednotku ve společném jmění. Zmocnění vyžaduje písemnou formu. Spoluvlastníci jednotky jsou povinni společenství vlastníků jednotek bezodkladně doručit zmocnění udělené jejich společnému zástupci. V případě, že se spoluvlastníci na společném zástupci nedohodnou, jsou spoluvlastníci povinni požádat o rozhodnutí v této věci soud a bezodkladně doručit společenství vlastníků pravomocné soudní rozhodnutí.  </p>
+<p><strong>(3)</strong> Práva a povinnosti člena společenství vlastníků vykonává společný zástupce. Společný zástupce je mimo jiné oprávněn zúčastnit se zasedání shromáždění společenství vlastníků a vykonávat na něm práva člena společenství vlastníků, zejména podávat jménem spoluvlastníků bytové jednotky návrhy a hlasovat o jednotlivých usneseních. Všichni spoluvlastníci bytové jednotky mají právo být na zasedání shromáždění přítomni, práva člena společenství vlastníků však nevykonávají. To platí i v případě manželů, kteří mají jednotku ve společném jmění. </p>
+<p><em><strong>Komentář: </strong></em></p>
+<p><em>Možnost vyloučit spoluvlastnictví jednotky upravuje § 1185 odst. 1 o. z. Lze předpokládat, že ve většině případů na tomto vyloučení nebudou mít vlastníci jednotek zájem, neboť by je to omezovalo v nakládání s jejich majetkem. </em></p>
+<p><em>Povinnost zvolit si zástupce spoluvlastníků upravuje § 1185 odst. 2 o. z. S ohledem na právní jistotu a předcházení sporů doporučujeme písemnou formu plné moci. Obecně se užijí ustanovení o zastoupení a plné moci podle § 436 – § 449 o. z. O ustanovení společného zástupce a o vzájemných právech a povinnostech bude zřejmě platit přiměřeně ustanovení § 1134 – § 1138 o. z. o správci společné věci. V případě, že je mezi spoluvlastníky spor o určení společného zástupce, uplatní se § 1139 odst. 2 o. z. Zástupcem nemusí být spoluvlastník jednotky.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn12">[12]</a> V odst. 3 je nad rámec zákona zakotveno právo spoluvlastníků být přítomni na zasedání shromáždění, což se jeví jako vhodné s ohledem na jejich možný zájem být co nejvíce informováni. </em></p>
+<p><em>V případě manželů, kteří mají jednotku ve společném jmění, se užije pro případ neshody mezi manžely ustanovení o správě majetku v zákonném režimu dle § 713 a násl. o. z. (zejména § 714 odst. 1), správě majetku ve smluveném režimu dle § 722 a násl. o. z. nebo správě majetku v režimu založeném rozhodnutím soudu dle § 728 o. z. Zřejmě spíše výjimečně bude rozhodování spadat pod záležitosti nemajetkové povahy upravené v § 693 – 695 o. z. </em></p>
+<h4 style="text-align: center;">Čl. XII </h4>
+<h4 style="text-align: center;">Zánik členství ve společenství vlastníků </h4>
+<p><strong>(1)</strong> Členství ve společenství vlastníků zaniká:  </p>
+<ol>
+<li style="list-style-type: lower-alpha;">převodem nebo přechodem vlastnictví jednotky,  </li>
+<li style="list-style-type: lower-alpha;">úmrtím člena společenství vlastníků – fyzické osoby,  </li>
+<li style="list-style-type: lower-alpha;">zánikem člena společenství vlastníků – právnické osoby bez právního nástupnictví,  </li>
+<li style="list-style-type: lower-alpha;">zánikem jednotky, jejímž vlastníkem je člen společenství vlastníků,  </li>
+<li style="list-style-type: lower-alpha;">dalším způsobem, pokud to stanoví právní předpisy.  </li>
+</ol>
+<p><strong>(2)</strong> Společné členství ve společenství vlastníků zaniká a mění se na členství dnem, kdy se zapíše změna předchozího spoluvlastnictví jednotky na výlučné vlastnictví jediného člena společenství do katastru nemovitostí; tuto změnu je povinen člen společenství neprodleně oznámit výboru společenství.  </p>
+<h4 style="text-align: center;">ČÁST ČTVRTÁ </h4>
+<h4 style="text-align: center;">ORGÁNY SPOLEČENSTVÍ VLASTNÍKŮ </h4>
+<h4 style="text-align: center;">Čl. XIII </h4>
+<h4 style="text-align: center;">Společná ustanovení </h4>
+<p><strong>Varianta s výborem</strong></p>
+<p><strong>(1)</strong> Orgány společenství vlastníků jsou:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">shromáždění,</li>
+<li style="list-style-type: lower-alpha;">výbor,  </li>
+</ol>
+<p><strong>Varianta s předsedou</strong></p>
+<p>Orgány společenství vlastníků jsou:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">shromáždění,</li>
+<li style="list-style-type: lower-alpha;">předseda společenství vlastníků.  </li>
+</ol>
+<p><strong><em>Komentář: </em></strong></p>
+<p><em>Shromáždění a statutární orgán jsou obligatorními orgány společenství vlastníků. Občanský zákoník (§ 1205) umožňuje, aby stanovy zřídily další orgány (fakultativní), kterým ale nelze založit působnost vyhrazenou shromáždění nebo statutárnímu orgánu. Vzorové stanovy společenství vlastníků jednotek vydané nařízením vlády č. 371/2004 Sb. upravovaly jako fakultativními orgány kontrolní komisi a revizora, v praxi však nebyli u „malých a středních“ společenství vlastníků ustanovováni, proto tento návrh stanov fakultativní orgány neupravuje. </em></p>
+<p><em>Co se týká statutárního orgánu, § 1205 odst. 1 o. z. stanoví, že statutárním orgánem je výbor, ledaže stanovy určí, že je statutárním orgánem předseda společenství vlastníků. Občanský zákoník tedy nahrazuje pojem „pověřený vlastník“ pojmem předseda společenství vlastníků. Vyvstává tedy otázka, zda lze ve stanovách určit tento orgány alternativně, tedy že jím bude buď výbor, nebo předseda společenství vlastníků. Nutno podotknout, že praxe do 31. 12. 2013 byla taková, že stanovy upravovaly výbor nebo pověřeného vlastníka alternativně, rovněž tak vzorové stanovy (např. čl. VI odst. 1, čl. IX). Nelze si však nepovšimnout rozdílu ve formulaci uvedené v § 9 odst. 7 zákona č. 72/1994 Sb. a ve shora citované formulaci § 1205 odst. 1 o. z. Důvodová zpráva nám odpověď na tuto otázku nedává. Rovněž v dosud publikované odborné literatuře jsme výslovnou odpověď nenalezli.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn13">[13]</a> S ohledem na právní jistotu, dokud tato otázka nebude judikatorně vyřešena, je navrhována výslovná úprava, tedy volba, zda statutárním orgánem bude výbor společenství nebo předseda společenství vlastníků. Je tedy vypracována dvojí varianta stanov, s výborem nebo předsedou společenství vlastníků, v ostatních článcích, v kterých se pouze odkazuje na statutární orgán, je pro zjednodušení uváděn výbor.  </em></p>
+<h4 style="text-align: center;">Čl. XIV </h4>
+<h4 style="text-align: center;">Shromáždění </h4>
+<p><strong>(1)</strong> Shromáždění je nejvyšším orgánem společenství vlastníků. Shromáždění tvoří všichni vlastníci jednotek. Každý z nich má počet hlasů odpovídající velikosti jeho podílu na společných částech; je-li však vlastníkem jednotky společenství vlastníků, k jeho hlasu se nepřihlíží.  </p>
+<p><strong>(2)</strong> Výbor svolá shromáždění k zasedání tak, aby se konalo nejméně jedenkrát do roka. Výbor svolá shromáždění i z podnětu vlastníků jednotek, kteří mají více než čtvrtinu všech hlasů, nejméně však dvou z nich; neučiní-li to ve lhůtě do třiceti dnů od doručení podnětu, svolají tito vlastníci shromáždění k zasedání na náklad společenství vlastníků sami. Je-li zasedání svoláno z podnětu vlastníků jednotek, může být pořad zasedání změněn jen se souhlasem toho, kdo podnět podal. </p>
+<p><strong>(3)</strong> Shromáždění se svolává písemnou pozvánkou, která se zašle všem členům společenství vlastníků na jimi sdělenou doručovací adresu, nebyla-li sdělena, na adresu uvedenou ve výpisu z katastru nemovitostí dokládající vlastnické právo k pozemku a domu. Pozvánka se současně vyvěsí v domě na domovní vývěsce společenství vlastníků. Písemná pozvánka musí být zaslána a vyvěšena ve lhůtě nejméně třiceti dnů před jeho konáním. Z pozvánky musí být zřejmé místo, čas a pořad zasedání. Místo a čas zasedání se určí tak, aby co nejméně omezovaly možnosti členů se jej účastnit. Nejsou-li k pozvánce připojeny podklady týkající se pořadu zasedání, umožní svolavatel každému vlastníku jednotky včas se s nimi seznámit.  </p>
+<p><strong>(4)</strong> Kdo zasedání svolal, může je odvolat nebo odložit stejným způsobem, jakým bylo svoláno. Stane-li se tak méně než týden před oznámeným datem zasedání, nahradí společenství vlastníků členům, kteří se na zasedání dostavili podle pozvánky, účelně vynaložené náklady. Je-li zasedání svoláno podle odst. 2 věta druhá, může být odvoláno či odloženo jen na návrh nebo se souhlasem toho, kdo k němu dal podnět. </p>
+<p><strong>(5)</strong> Člen společenství vlastníků může zmocnit jiného člena společenství vlastníků nebo kteroukoliv jinou osobu, aby ho zastupovala při účasti na shromáždění nebo na všech shromážděních, a to včetně hlasování. Zmocnění musí mít písemnou formu, zastoupení dle generální plné moci se připouští. V případě zastoupení se zástupce člena společenství vlastníků na shromáždění prokáže občanským průkazem nebo jiným dokladem osvědčujícím jeho totožnost a aktuálním výpisem z obchodního nebo jiného rejstříku, jde-li o právnickou osobu, a plnou mocí udělenou členem společenství vlastníků, za kterého se shromáždění účastní, nebyla-li plná moc k účasti na všech shromážděních předložena společenství vlastníků dříve. Podpisy na plné moci nemusejí být úředně ověřeny. </p>
+<p><strong>(6)</strong> Do působnosti shromáždění patří:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">změna stanov,</li>
+<li style="list-style-type: lower-alpha;">změna prohlášení o rozdělení práva k domu a pozemku na vlastnické právo k jednotkám,</li>
+<li style="list-style-type: lower-alpha;">volba a odvolávání členů výboru a rozhodování o výši jejich odměn,</li>
+<li style="list-style-type: lower-alpha;">schválení rozpočtu, účetní závěrky, vypořádání výsledku hospodaření a zprávy o hospodaření společenství vlastníků a správě domu s výsledky plnění rozpočtu, jakož i celkové výše příspěvků na správu domu pro příští období a rozhodnutí o vyúčtování nebo vypořádání nevyčerpaných příspěvků,</li>
+<li style="list-style-type: lower-alpha;">schválení druhu služeb a výše záloh na jejich úhradu, jakož i způsobu rozúčtování cen služeb na jednotky,</li>
+<li style="list-style-type: lower-alpha;">rozhodování<br />– o členství společenství vlastníků v právnické osobě působící v oblasti bydlení,<br />– o změně účelu užívání domu nebo bytu,<br />– o změně podlahové plochy bytu,<br />– o úplném nebo částečném sloučení nebo rozdělení jednotek,<br />– o změně podílu na společných částech,<br />– o změně v určení společné části sloužící k výlučnému užívání vlastníka jednotky,<br />– o opravě nebo stavební úpravě společných částí nemovité věci, převyšují-li náklady částku stanovenou v čl. XVI odst. 12 stanov, (u varianty s předsedou společenství vlastníků čl. XVI. odst. 10),</li>
+<li style="list-style-type: lower-alpha;">udělování předchozího souhlasu,<br />– k nabytí, zcizení nebo zatížení nemovitých věcí nebo k jinému nakládání s nimi, <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn14">[14]<br /></a>– k nabytí, zcizení nebo zatížení movitých věcí, jejichž hodnota převyšuje částku stanovenou v čl. XVI odst. 12 stanov, (u varianty s předsedou společenství vlastníků čl. XVI. odst. 10),<br />– k uzavření smlouvy o úvěru společenstvím vlastníků včetně schválení výše a podmínek úvěru,<br />– k uzavření smlouvy o zřízení zástavního práva k jednotce, pokud dotčený vlastník jednotky v písemné formě s uzavřením zástavní smlouvy souhlasil, <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn15">[15]<br /></a></li>
+<li style="list-style-type: lower-alpha;">určení osoby, která má zajišťovat některé činnosti správy domu a pozemku, i rozhodnutí o její změně, jakož i schválení smlouvy s touto osobou a schválení změny smlouvy v ujednání o ceně nebo o rozsahu činnosti,</li>
+<li style="list-style-type: lower-alpha;">rozhodování v dalších záležitostech určených stanovami nebo v záležitostech, které si shromáždění k rozhodnutí vyhradí.  </li>
+</ol>
+<p><strong>(7)</strong> Shromáždění je způsobilé usnášet se za přítomnosti vlastníků jednotek, kteří mají většinu všech hlasů. K přijetí rozhodnutí se vyžaduje souhlas většiny hlasů přítomných vlastníků jednotek, ledaže zákon vyžaduje vyšší počet hlasů.. </p>
+<p><strong>(8)</strong> Zasedání shromáždění zahájí předseda výboru nebo pověřený člen výboru. V případě svolání zasedání shromáždění z podnětu vlastníků jednotek podle čl. XIV odst. 2 věty druhé zahájí zasedání shromáždění člen společenství vlastníků zmocněný těmito vlastníky jednotek. Kdo zasedání zahájí, ověří, zda je členská schůze schopna se usnášet. Poté zajistí volbu předsedy zasedání a zapisovatele. Předseda vede zasedání tak, jak byl jeho pořad ohlášen, ledaže shromáždění rozhodne o předčasném ukončení. Shromáždění hlasuje veřejně, zvednutím ruky. Shromáždění se může nadpoloviční většinou hlasů přítomných členů usnést, že bude o určité věci hlasovat tajně pomocí hlasovacích lístků. V takovém případě současně stanoví postup pro tajné hlasování. Před přijetím každého usnesení zjistí předseda zasedání počet přítomných členů, po hlasování uvede, počet souhlasných hlasů pro přijetí usnesení.Záležitost, která nebyla zařazena na pořad zasedání v písemné pozvánce, lze rozhodnout jen za účasti a se souhlasem všech členů společenství vlastníků oprávněných o ní hlasovat.  </p>
+<p><strong>9)</strong> Výbor zajistí vyhotovení zápisu ze zasedání shromáždění ve lhůtě do třiceti dnů od jejího ukončení. Není-li to možné, vyhotoví zápis ten, kdo zasedání předsedal nebo koho tím pověřilo shromáždění. Ze zápisu musí být patrné:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">kdo zasedání svolal</li>
+<li style="list-style-type: lower-alpha;">jak, kdy se konalo,</li>
+<li style="list-style-type: lower-alpha;">kdo je zahájil a kdo mu předsedal,</li>
+<li style="list-style-type: lower-alpha;">jaké případné členy orgánu shromáždění zvolilo,</li>
+<li style="list-style-type: lower-alpha;">plné znění přijatých usnesení,</li>
+<li style="list-style-type: lower-alpha;">uvedení počtu přítomných členů a počtu souhlasných hlasů při přijetí každého usnesení</li>
+<li style="list-style-type: lower-alpha;">kdy byl zápis vyhotoven.</li>
+</ol>
+<p>Přílohu zápisu tvoří zejména listina přítomných s jejich podpisy a písemné podklady, které byly předloženy k jednotlivým projednávaným bodům. Zápis podepisuje předseda zasedání a zapisovatel. Zápisy včetně písemných podkladů k jednání shromáždění musejí být uschovány u předsedy výboru. Každý člen spolku může nahlížet do zápisů ze zasedání za podmínek určených v článku X. odst. 2 stanov, toto právo lze vykonat v sídle společenství vlastníků. Pokud o to člen společenství vlastníků požádá, jsou mu zápisy ze zasedání shromáždění zasílány na jeho e-mailovou adresu, bezprostředně po vyhotovení zápisu. </p>
+<p><strong>(10)</strong> Je-li pro to důležitý důvod, může přehlasovaný vlastník jednotky nebo i společenství vlastníků, pokud je vlastníkem jednotky, navrhnout soudu, aby o záležitosti rozhodl; v rámci toho může též navrhnout, aby soud dočasně zakázal jednat podle napadeného rozhodnutí. Není-li návrh podán do tří měsíců ode dne, kdy se vlastník jednotky o rozhodnutí dozvěděl nebo dozvědět mohl, jeho právo zaniká.  </p>
+<p><strong>(11)</strong> Je-li pro to důležitý důvod, může každý vlastník jednotky navrhnout soudu, aby rozhodl o záležitosti, která byla shromáždění řádně předložena k rozhodnutí, ale o které nebylo rozhodnuto pro nezpůsobilost shromáždění usnášet se.  </p>
+<p><strong><em>Komentář: </em></strong></p>
+<p><em><strong>Odst. 1:</strong></em> <em>Upraveno v § 1205 až 1209 o. z., dále se přiměřeně dle § 1221 o. z. použijí ustanovení o členské schůzi, pokud nevyplývá z ustanovení o společenství vlastníků něco jiného. Na rozdíl od úpravy platné do 31. 12. 2013 dochází k rozšíření působnosti shromáždění. Další podstatnou změnou je, že podle zákona se k přijetí rozhodnutí vyžaduje souhlas většiny hlasů (srovnej dříve platnou úpravu zák. č. 72/1994 Sb., který vyžadoval v některých případech kvalifikovanou většinu nebo většinu všech). Stanovy mohou určit pro přijetí některých rozhodnutí kvalifikovanou většinu. Výkladový problém může nastat v tom, jaká většina je potřebná k přijetí rozhodnutí o změně stanov, když ke schválení stanov je podle § 1200 o. z. nutný souhlas všech vlastníků jednotek. Otázkou je, zda ke změně stanov je rovněž potřeba souhlas všech vlastníků jednotek, nebo zda postačí prostá většina přítomných, případně kvalifikovaná většina určená stanovami. Odborná literatura se této problematice výslovně nevěnuje,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn16">[16]</a> ale z jejího obsahu lze vyvodit, že nepovažuje pro změnu stanov nutnou stoprocentní většinu. Je nepochybné, že požadavek stoprocentní většiny by v řadě společenství vlastníků jakoukoliv změnu stanov přijetím rozhodnutí na zasedání shromáždění znemožnil.</em></p>
+<p><em>Bytová družstva uvedená v zákoně č. 311/2013 Sb. mají povinnost nejpozději do 90 dnů ode dne, kdy jim budou doručeny listiny dokládající snížení jejich spoluvlastnického podílu na méně než jednu polovinu, svolat shromáždění vlastníků jednotek k založení společenství vlastníků. Ke schválení stanov se vyžaduje souhlas nadpoloviční většiny hlasů vlastníků jednotek přítomných na shromáždění vlastníků jednotek (§ 1200 odst. 1 věta druhá o. z. se nepoužije).</em></p>
+<p><strong><em>Odst. 2</em></strong>: <em>Podle § 1207 o. z. se zasedání shromáždění koná nejméně jedenkrát do roka. Je vhodné upravit vyšší počet minimálních zasedání, když v působnosti shromáždění je schvalování rozpočtu a zároveň shromáždění schvaluje účetní závěrku, výsledek hospodaření a další listiny vztahující se k minulému roku. Možnost svolání zasedání shromáždění z podnětu vlastníků jednotek upravuje § 1207 o. z., lhůta pro svolání je upravena v § 248 odst. 2 o. z, možnost změny pořadu jednání je upraveno v § 249 odst. 2 o. z.</em></p>
+<p><em><strong>Odst. 3:</strong></em> <em>Způsob svolávání upravuje § 249 o. z., zde je dána možnost upravit lhůtu pro svolávání, jinak činí nejméně 30 dnů před konáním shromáždění. Vzorové stanovy upravovaly svolávání v čl. VII odst. 4 až 8, zde byla uvedena lhůta 15 dnů, která se však počítala od doručení. V tomto návrhu stanov je navrhována lhůta 30 dnů, která se však bude počítat od zaslání písemné pozvánky a od jejího vyvěšení, a to z důvodu prokazatelnosti, kdy byla pozvánka zaslána. Počítání lhůty od doručení písemné pozvánky by mohlo být problematické. </em></p>
+<p><em><strong>Odst. 4:</strong> Upraven v § 250 o. z.</em></p>
+<p><em><strong>Odst. 5:</strong></em> <em>Úprava zastoupení dle plné moci upravená ve stanovách reaguje na judikaturu.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn17">[17]</a> Na tomto místě doporučujeme výslovně upravit, zda na plné moci bude vyžadováno úřední ověření podpisu. K formě plné moci k zastoupení před orgánem právnické osoby vydala Komise pro aplikaci nové civilní legislativy při Ministerstvu spravedlnosti stanovisko <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn18">[18]</a>, podle kterého, pokud je stanovena povinnosti pořizovat notářský zápis o rozhodnutí orgánu právnické osoby (v našem případě shromáždění), nevyplývá z této povinnosti požadavek udělit k účasti na rozhodování tohoto orgánu plnou moc ve formě notářského zápisu.</em></p>
+<p><em><strong>Odst. 6:</strong> Podle § 15 nařízení vlády č. 366/2013 Sb. schvaluje rozpočet shromáždění. </em></p>
+<p><em><strong>Odst. 8:</strong> Průběh zasedání upravuje § 253 o. z., úprava volba předsedy zasedání a zapisovatele je fakultativní.</em></p>
+<p><em><strong>Odst. 9:</strong></em> <em>Náležitosti zápisu upravuje § 254 o. z., dále je úprava ve stanovách reakcí na judikaturu.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn19">[19]</a> </em></p>
+<h4 style="text-align: center;">Čl. XV </h4>
+<h4 style="text-align: center;">Rozhodnutí mimo zasedání shromáždění </h4>
+<p><strong>(1)</strong> Osoba, která je oprávněna shromáždění svolat, může navrhnout v písemné formě, aby vlastníci jednotek rozhodli o záležitostech, které náleží do působnosti shromáždění, mimo zasedání, s výjimkou rozhodnutí o změně stanov.  </p>
+<p><strong>(2)</strong> Návrh musí obsahovat alespoň návrh usnesení, podklady potřebné pro jeho posouzení nebo údaj, kde jsou uveřejněny, a údaj o lhůtě, ve které se má vlastník jednotky vyjádřit. Lhůta k vyjádření činí patnáct dní.  </p>
+<p><strong>(3)</strong> K platnosti hlasování se vyžaduje vyjádření vlastníka jednotky s uvedením dne, měsíce a roku, kdy bylo učiněno, podepsané vlastní rukou na listině obsahující plné znění návrhu rozhodnutí.  </p>
+<p><strong>(4)</strong> Výbor oznámí vlastníkům jednotek v písemné formě výsledek hlasování, a pokud bylo usnesení přijato, oznámí jim i celý obsah přijatého usnesení. Neučiní-li to bez zbytečného odkladu, může oznámení učinit na náklady společenství vlastníků ten, kdo usnesení navrhl.  </p>
+<p><strong>(5)</strong> Rozhodnutí se přijímá většinou hlasů všech vlastníků jednotek. Mění-li se však všem vlastníkům jednotek velikost podílů na společných částech nebo mění-li se poměr výše příspěvků na správu domu a pozemku jinak než v důsledku změny podílů na společných částech, vyžaduje se souhlas všech vlastníků jednotek. </p>
+<p><em><strong>Komentář: </strong></em></p>
+<p><em>Upraveno v § 1210 až 1214 o. z. Podle § 1210 o. z. je možné přijmout rozhodnutí mimo zasedání shromáždění, v případě, že svolané shromáždění není způsobilé se usnášet, s tím, že stanovy mohou připustit také jiné případy. Vzhledem k praktičnosti je navrhována v těchto stanovách možnost co nejširší, tedy pro všechny případy, s výjimkou rozhodnutí o změně stanov, které musí mít podle § 564 a 1200 o. z. formu notářského zápisu, což by působilo právní i praktické problémy.</em></p>
+<p><em><strong>K odst. 2</strong>: Stanovy mohou určit delší lhůtu k vyjádření.</em></p>
+<p><em><strong>K odst. 5:</strong> Stanovy mohou určit vyšší počet hlasů potřebný k přijetí rozhodnutí. </em></p>
+<h4 style="text-align: center;">Čl. XVI</h4>
+<h4 style="text-align: center;">Varianta s výborem </h4>
+<h4 style="text-align: center;">Výbor </h4>
+<p><strong>(1)</strong> Výbor je statutárním orgánem společenství vlastníků. Řídí a organizuje běžnou činnost společenství vlastníků a rozhoduje ve věcech spojených se správou domu a s předmětem činnosti společenství vlastníků s výjimkou těch věcí, které jsou podle právních předpisů ve výlučné působnosti shromáždění, anebo si je shromáždění k rozhodnutí vyhradilo.  </p>
+<p><strong>(2)</strong> Výbor je tříčlenný. Každý člen výboru zastupuje společenství vlastníků navenek samostatně ve všech záležitostech. Za společenství vlastníků se člen výborů podepisuje tak, že k jeho názvu připojí svůj podpis a údaj o své funkci. </p>
+<p><strong>(3)</strong> Funkční období členů výboru činí pět let a počíná zvolením do funkce. Členové výboru jsou voleni a odvoláváni shromážděním, mohou být do své funkce voleni opětovně. Předsedu a místopředsedu volí výbor z řad svých členů a z funkce je odvolává.  </p>
+<p><strong>(4)</strong> Způsobilý být členem výboru je ten, kdo je plně svéprávný a bezúhonný ve smyslu právního předpisu upravujícího živnostenské podnikání. Je-li členem výboru jiná právnická osoba, zmocní fyzickou osobu, aby ji ve výboru zastupovala, jinak právnickou osobu zastupuje člen jejího statutárního orgánu. </p>
+<p><strong>(5)</strong> Osoba, jejíž úpadek byl osvědčen, se může stát členem výboru, oznámila-li to předem společenství vlastníků, to neplatí, pokud od skončení insolvenčního řízení uplynuly alespoň tři roky. Byl-li osvědčen úpadek osoby, která je již členem výboru, oznámí to tato osoba bez zbytečného odkladu společenství vlastníků. Nedošlo-li k oznámení, může se domáhat každý, kdo na tom má právní zájem, aby člena výboru z funkce odvolal soud. To neplatí, rozhodlo-li společenství vlastníků, poté, co se o osvědčení úpadku této osoby dozvědělo, že má ve funkci setrvat. </p>
+<p><strong>(6)</strong> Kdo přijme funkci člena výboru, zavazuje se, že ji bude vykonávat s nezbytnou loajalitou i s potřebnými znalostmi a pečlivostí. Má se za to, že jedná nedbale, kdo není této péče řádného hospodáře schopen, ač to musel zjistit při přijetí funkce nebo při jejím výkonu, a nevyvodí z toho pro sebe důsledky. Člen výboru vykonává funkci osobně; to však nebrání tomu, aby člen zmocnil pro jednotlivý případ jiného člena výboru, aby za něho při jeho neúčasti hlasoval.  </p>
+<p><strong>(7)</strong> Výbor zasedá podle potřeby, nejméně však jednou za čtvrtletí. Zasedání výboru je oprávněn svolat každý člen výboru. Každý člen výboru má jeden hlas. Výbor je způsobilý se usnášet za přítomnosti většiny členů, rozhoduje většinou hlasů zúčastněných. O průběhu jednání výboru a o jeho rozhodnutích se pořídí zápis podepsaný předsedajícím a zapisovatelem, přílohu zápisu tvoří listina přítomných. O náležitostech zápisu platí přiměřeně čl. XIV odst. 9 stanov. Je-li rozhodnutí přijato, zaznamená se na žádost člena výboru, který návrhu odporoval, jeho odchylný názor. Byl-li návrh přijat za neúčasti některého z členů, je tento člen výboru oprávněn dozvědět se obsah rozhodnutí. Zápisy ze zasedání výboru jsou k dispozici členům společenství vlastníků k nahlédnutí za podmínek uvedených v čl. X odst. 2 stanov. Pokud o to člen společenství vlastníků požádá, jsou mu zápisy ze zasedání výboru zasílány na jeho e-mailovou adresu, bezprostředně po vyhotovení zápisu. </p>
+<p><strong>(8)</strong> Má-li společenství vlastníků zaměstnance je pověřen právním jednáním vůči zaměstnancům předseda výboru.  </p>
+<p><strong>(9)</strong> Odpovědnost člena výboru za škodu, kterou způsobil porušením právní povinnosti při výkonu své funkce, se řídí ustanoveními občanského zákoníku. Nenahradil-li člen výboru společenství vlastníků škodu, kterou jí způsobil porušením povinnosti při výkonu funkce, ačkoli byl povinen škodu nahradit, ručí věřiteli společenství vlastníků za jeho dluh v rozsahu, v jakém škodu nenahradil, pokud se věřitel plnění na společenství vlastníků nemůže domoci.  </p>
+<p><strong>(10)</strong> Výbor jako výkonný orgán společenství vlastníků zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">zajišťuje záležitosti společenství vlastníků ve věcech správy domu a pozemku a dalších činností společenství vlastníků podle právních předpisů a těchto stanov, pokud nejde o záležitosti, které jsou v působnosti shromáždění; zajišťuje plnění usnesení shromáždění a odpovídá mu za svou činnost,</li>
+<li style="list-style-type: lower-alpha;">rozhoduje o pojištění domu,</li>
+<li style="list-style-type: lower-alpha;">rozhoduje o zajištění dodávky služeb spojených s užíváním jednotek v souladu s usnesením shromáždění o schválení druhu služeb,</li>
+<li style="list-style-type: lower-alpha;">odpovídá za vedení účetnictví a za sestavení účetní závěrky a za předložení přiznání k daním, pokud tato povinnost vyplývá z právních předpisů,</li>
+<li style="list-style-type: lower-alpha;">připravuje podklady pro zasedání shromáždění, svolává shromáždění, předkládá shromáždění návrh rozpočtu, zprávu o hospodaření společenství vlastníků s výsledky plnění rozpočtu, zprávu o správě domu a pozemku a o dalších činnostech společenství vlastníků, které obsahují zejména základní údaje o provedených a plánovaných opravách, údržbě a povinných revizích včetně údajů o použití a stavu příspěvků na správu domu a pozemku,</li>
+<li style="list-style-type: lower-alpha;">předkládá k projednání a schválení účetní závěrku a písemné materiály, které má shromáždění projednat,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje řádné vedení písemností společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">sděluje jednotlivým členům společenství vlastníků podle usnesení shromáždění výši příspěvků na náklady spojené se správou domu a pozemku a výši záloh na úhradu za služby,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje vyúčtování záloh na úhradu za služby a vypořádání nedoplatků nebo přeplatků,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje včasné plnění závazků společenství vlastníků vzniklých ze smluv a jiných závazků a povinností vůči třetím osobám a včasné uplatňování pohledávek společenství vlastníků.  </li>
+</ol>
+<p><strong>(11)</strong> Výbor jako statutární orgán společenství vlastníků zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">v souladu s právními předpisy, s těmito stanovami a s usneseními shromáždění činí právní jednání za společenství vlastníků navenek ve věcech předmětu činnosti, zejména též uzavírá smlouvy,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje kontrolu kvality dodávek, služeb a jiných plnění podle uzavřených smluv a činí vůči dodavatelům potřebná právní nebo jiná opatření k odstranění zjištěných nedostatků nebo k náhradě vzniklé škody,</li>
+<li style="list-style-type: lower-alpha;">za společenství vlastníků vymáhá plnění povinností uložených členům společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">plní povinnosti podle právních předpisů ve vztahu k rejstříku společenství vlastníků jednotek vedenému příslušným soudem určeným zvláštním předpisem.</li>
+<li style="list-style-type: lower-alpha;">v případě změny prohlášení dle § 1166 o. z., zajistí vyhotovení úplného znění a bez zbytečného odkladu je založí do sbírky listin vedené příslušným katastrálním úřadem, </li>
+</ol>
+<p><strong>(12)</strong> V působnosti výboru je dále rozhodování: </p>
+<ol>
+<li style="list-style-type: lower-alpha;">o nabytí, zcizení nebo zatížení movitých věcí, jejichž pořizovací cena nedosáhne v kalendářním roce souhrnné částky 10 000 Kč, dále rozhodování o zcizení nebo zatížení movitých věcí, jejichž zůstatková cena v kalendářním roce nepřesahuje v souhrnu 10 000 Kč;</li>
+<li style="list-style-type: lower-alpha;">o opravě nebo stavební úpravě společných částí nemovité věci, nepřevyšují-li náklady v jednotlivých případech částku 1000 Kč v průměru na každou jednotku; tento limit neplatí, pokud se jedná o opravy způsobené havárií na společných částech,  </li>
+</ol>
+<p><strong>(13)</strong> Členství ve výboru končí:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">uplynutím funkčního období,</li>
+<li style="list-style-type: lower-alpha;">odvoláním z funkce,</li>
+<li style="list-style-type: lower-alpha;">odstoupením z funkce,</li>
+<li style="list-style-type: lower-alpha;">ztrátou způsobilosti být členem výboru</li>
+<li style="list-style-type: lower-alpha;">případně jiným způsobem stanoveným právními předpisy nebo stanovami.  </li>
+</ol>
+<p><strong>(14)</strong> Odstoupí-li člen voleného orgánu ze své funkce prohlášením došlým společenství vlastníků, zaniká funkce uplynutím dvou měsíců od dojití prohlášení. </p>
+<p><strong>(15)</strong> Členové výboru, jejichž počet neklesl pod polovinu, mohou kooptovat náhradní členy výboru do nejbližšího zasedání shromáždění. </p>
+<p><strong>(16)</strong> Nemá-li výbor dostatečný počet členů potřebný k rozhodování, jmenuje na návrh toho, kdo osvědčí právní zájem, chybějící členy soud na dobu než budou noví členové povoláni postupem určeným ve stanovách; jinak soud jmenuje společenství vlastníků opatrovníka, a to i bez návrhu, kdykoli se o tom při své činnosti dozví. Soud jmenuje společenství vlastníků opatrovníka, a to i bez návrhu, jsou-li zájmy člena statutárního orgánu v rozporu se zájmy společenství vlastníků a nemá-li společenství vlastníků jiného člena orgánu schopného ho zastupovat. Tyto stanovy ve smyslu § 488 o. z. určují, aby v tomto případě byl tímto opatrovníkem jmenován někdo ze členů společenství vlastníků. </p>
+<p><em><strong>Komentář: </strong></em></p>
+<p><em>Upraveno zejména v § 152 až 165, § 244, 246, 1205 o. z. </em></p>
+<p><em><strong>Odst. 2:</strong> Počet členů výboru. Na rozdíl od právní úpravy platné do 31. 12. 2013 není stanoven minimální počet. Počet musí být vždy určitý, nepřípustné je určení jen minimálním počtem – např. výbor má nejméně tři členy<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn20">[20]</a>. Další změna se týká jednání navenek za společenství vlastníků – nově není zákonem stanoveno, že by písemný právní úkon musel být podepsán předsedou výboru a dalším členem výboru. Neurčí-li stanovy, jak členové výboru společenství vlastníků zastupují, činí tak dle § 164 o. z. každý člen samostatně.</em></p>
+<p><em><strong>Odst. 3:</strong>  Funkční období. Na rozdíl od právní úpravy platné do 31. 12. 2013 není stanovena maximální délka funkčního období. Může být tedy zvolena libovolně, podle § 246 o. z., neurčí-li stanovy funkční období členů volených orgánů, je toto období pětileté. Funkční období musí být vždy určité, nepřípustné je určení typu minimální délky – např. minimálně dva roky.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn21">[21]</a> Dávám k zamyšlení, jak by se soud v případném sporu postavil k otázce platnosti funkčního období v délce např. 50 let.</em></p>
+<p><em><strong>Odst 4:</strong> Nově občanský zákoník (§ 1205 odst. 2 o. z.), nevyžaduje, aby členem statutárního orgánu byl člen společenství vlastníků, stanovy ale mohou tuto podmínku upravit, případně stanovit další podmínky. Členství právnické osoby ve výboru je upraveno v § 154 o. z.</em></p>
+<p><em><strong>Odst 5:</strong> Upraveno v § 153 o. z., stanovy mohou stanovit přísnější podmínky. </em></p>
+<p><em><strong>Odst 6:</strong> Citace § 159 odst. 1 a 2 o. z. </em></p>
+<p><em><strong>Odst. 7:</strong> Zákonem není upraven počet zasedání výboru ročně, lze stanovit libovolně, ale tak aby výbor mohl plnit své povinnosti. Úprava svolávání, jednání, usnášení a rozhodování výboru je plně v kompetenci stanov, podle § 246 odst. 3, neurčí-li stanovy jinak, použijí se pro svolávání, zasedání a rozhodování výboru přiměřeně ustanovení o shromáždění. Podle § 156 odst. 2 o. z. je výbor je způsobilý se usnášet za přítomnosti většiny členů, rozhoduje většinou hlasů zúčastněných, toto se nepoužije, je-li působnosti členů rozdělena podle určitých oborů. Stanovy mohou podle § 158 odst. 1 o. z. pro usnášeníschopnost a pro přijetí rozhodnutí stanovit vyšší počet hlasů. Povinnost uvést odchylný názor upravuje § 157 o. z.</em></p>
+<p><em><strong>Odst. 8:</strong> Podle § 164 odst. 3 o.  z., pokud má společenství vlastníků zaměstnance pověří jednoho člena výboru právním jednáním vůči zaměstnanci, jinak vykonává tuto působnost předseda výboru. </em></p>
+<p><em><strong>Odst. 9:</strong> Upraveno v § 159 odst. 3 o. z. </em></p>
+<p><em><strong>Odst. 11: </strong>Povinnost uvedená v písm. e) stanov vyplývá z § 1220 o. z. </em></p>
+<p><em><strong>Odst. 12:</strong> Upraveno v § 13 nařízení vlády č. 366/2013 Sb., stanovy mohou jinak upravit peněžní částky, případně zvolit zcela jinou úpravu.</em></p>
+<p><em><strong>Odst. 14:</strong> Citace § 160 o. z.</em></p>
+<p><em><strong>Odst. 15:</strong> Upraveno v § 246 odst. 2 o. z. Stanovy mohou kooptaci upravit jinak, případně vyloučit.</em></p>
+<p><em><strong>Odst. 16:</strong> Citace § 165 o. z. Možnost určení opatrovníka v § 488 o. z. </em></p>
+<h4 style="text-align: center;">Čl. XVI</h4>
+<h4 style="text-align: center;">Varianta s předsedou </h4>
+<h4 style="text-align: center;">Předseda společenství vlastníků </h4>
+<p><strong>(1)</strong> Předseda společenství vlastníků je statutárním orgánem společenství vlastníků. Statutární orgán má jednoho člena. Řídí a organizuje běžnou činnost společenství vlastníků a rozhoduje ve věcech spojených se správou domu a s předmětem činnosti společenství vlastníků s výjimkou těch věcí, které jsou podle právních předpisů ve výlučné působnosti shromáždění, anebo si je shromáždění k rozhodnutí vyhradilo.  </p>
+<p><strong>(2)</strong> Předseda společenství vlastníků zastupuje společenství vlastníků navenek samostatně ve všech záležitostech. Za společenství vlastníků se předseda společenství vlastníků podepisuje tak, že k jeho názvu připojí svůj podpis a údaj o své funkci. </p>
+<p><strong>(3)</strong> Funkční období předsedy společenství vlastníků činí pět let a počíná zvolením do funkce. Předseda společenství vlastníků je volen a odvoláván shromážděním, může být do své funkce volen opětovně.  </p>
+<p><strong>(4)</strong> Způsobilý být předsedou společenství vlastníků je ten, kdo je plně svéprávný a je bezúhonný ve smyslu právního předpisu upravujícího živnostenské podnikání. Je-li předsedou společenství vlastníků jiná právnická osoba, zmocní fyzickou osobu, aby ji ve výboru zastupovala, jinak právnickou osobu zastupuje člen jejího statutárního orgánu. </p>
+<p><strong>(5)</strong> Osoba, jejíž úpadek byl osvědčen, se může stát předsedou společenství vlastníků, oznámila-li to předem společenství vlastníků, to neplatí, pokud od skončení insolvenčního řízení uplynuly alespoň tři roky. Byl-li osvědčen úpadek osoby, která je již předsedou společenství vlastníků, oznámí to tato osoba bez zbytečného odkladu společenství vlastníků. Nedošlo-li k oznámení, může se domáhat každý, kdo na tom má právní zájem, aby předsedu společenství vlastníků z funkce odvolal soud. To neplatí, rozhodlo-li společenství vlastníků, poté, co se o osvědčení úpadku této osoby dozvědělo, že má ve funkci setrvat. </p>
+<p><strong>(6)</strong> Kdo přijme funkci předsedy společenství vlastníků, zavazuje se, že ji bude vykonávat s nezbytnou loajalitou i s potřebnými znalostmi a pečlivostí. Má se za to, že jedná nedbale, kdo není této péče řádného hospodáře schopen, ač to musel zjistit při přijetí funkce nebo při jejím výkonu, a nevyvodí z toho pro sebe důsledky. Předseda společenství vlastníků vykonává funkci osobně.  </p>
+<p><strong>(7)</strong> Odpovědnost předsedy společenství vlastníků za škodu, kterou způsobil porušením právní povinnosti při výkonu své funkce, se řídí ustanoveními občanského zákoníku. Nenahradil-li předseda společenství vlastníků škodu, kterou společenství vlastníků způsobil porušením povinnosti při výkonu funkce, ačkoli byl povinen škodu nahradit, ručí věřiteli společenství vlastníků za jeho dluh v rozsahu, v jakém škodu nenahradil, pokud se věřitel plnění na společenství vlastníků nemůže domoci.</p>
+<p><strong>(8)</strong> Předseda společenství vlastníků jako výkonný orgán společenství vlastníků zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">zajišťuje záležitosti společenství vlastníků ve věcech správy domu a pozemku a dalších činností společenství vlastníků podle právních předpisů a těchto stanov, pokud nejde o záležitosti, které jsou v působnosti shromáždění; zajišťuje plnění usnesení shromáždění a odpovídá mu za svou činnost,</li>
+<li style="list-style-type: lower-alpha;">rozhoduje o pojištění domu,</li>
+<li style="list-style-type: lower-alpha;">rozhoduje o zajištění dodávky služeb spojených s užíváním jednotek, v souladu s usnesením shromáždění o schválení druhu služeb,</li>
+<li style="list-style-type: lower-alpha;">odpovídá za vedení účetnictví a za sestavení účetní závěrky a za předložení přiznání k daním, pokud tato povinnost vyplývá z právních předpisů,</li>
+<li style="list-style-type: lower-alpha;">připravuje podklady pro zasedání shromáždění, svolává shromáždění, předkládá shromáždění návrh rozpočtu, zprávu o hospodaření společenství vlastníků s výsledky plnění rozpočtu, zprávu o správě domu a pozemku a o dalších činnostech společenství vlastníků, které obsahují zejména základní údaje o provedených a plánovaných opravách, údržbě a povinných revizích včetně údajů o použití a stavu příspěvků na správu domu a pozemku,</li>
+<li style="list-style-type: lower-alpha;">předkládá k projednání a schválení účetní závěrku a písemné materiály, které má shromáždění projednat,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje řádné vedení písemností společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">sděluje jednotlivým členům společenství vlastníků podle usnesení shromáždění výši příspěvků na náklady spojené se správou domu a pozemku a výši záloh na úhradu za služby,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje vyúčtování záloh na úhradu za služby a vypořádání nedoplatků nebo přeplatků,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje včasné plnění závazků společenství vlastníků vzniklých ze smluv a jiných závazků a povinností vůči třetím osobám a včasné uplatňování pohledávek společenství vlastníků. </li>
+</ol>
+<p><strong>(9)</strong> Předseda společenství vlastníků jako statutární orgán společenství zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">v souladu s právními předpisy, s těmito stanovami a s usneseními shromáždění činí právní jednání za společenství vlastníků navenek ve věcech předmětu činnosti, zejména též uzavírá smlouvy,</li>
+<li style="list-style-type: lower-alpha;">zajišťuje kontrolu kvality dodávek, služeb a jiných plnění podle uzavřených smluv a činí vůči dodavatelům potřebná právní nebo jiná opatření k odstranění zjištěných nedostatků nebo k náhradě vzniklé škody,</li>
+<li style="list-style-type: lower-alpha;">za společenství vlastníků vymáhá plnění povinností uložených členům společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">plní povinnosti podle právních předpisů ve vztahu k rejstříku společenství vlastníků jednotek vedenému příslušným soudem určeným zvláštním předpisem,</li>
+<li style="list-style-type: lower-alpha;">v případě změny prohlášení dle § 1166 o. z., zajistí vyhotovení úplného znění a bez zbytečného odkladu je založí do sbírky listin vedené příslušným katastrálním úřadem. </li>
+</ol>
+<p><strong>(10)</strong> V působnosti předsedy společenství vlastníků je dále rozhodování: </p>
+<ol>
+<li style="list-style-type: lower-alpha;">o nabytí, zcizení nebo zatížení movitých věcí, jejichž pořizovací cena nedosáhne v kalendářním roce souhrnné částky 10 000 Kč, dále rozhodování o zcizení nebo zatížení movitých věcí, jejichž zůstatková cena v kalendářním roce nepřesahuje v souhrnu 10 000 Kč;</li>
+<li style="list-style-type: lower-alpha;">o opravě nebo stavební úpravě společných částí nemovité věci, nepřevyšují-li náklady v jednotlivých případech částku 1000 Kč v průměru na každou jednotku; tento limit neplatí, pokud se jedná o opravy způsobené havárií na společných částech.  </li>
+</ol>
+<p><strong>(11)</strong> Funkce předsedy společenství vlastníků končí:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">uplynutím funkčního období,</li>
+<li style="list-style-type: lower-alpha;">odvoláním z funkce,</li>
+<li style="list-style-type: lower-alpha;">odstoupením z funkce,</li>
+<li style="list-style-type: lower-alpha;">ztrátou způsobilosti být předsedou společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">případně jiným způsobem stanoveným právními předpisy nebo stanovami.  </li>
+</ol>
+<p><strong>(12)</strong> Odstoupí-li předseda společenství vlastníků ze své funkce prohlášením došlým společenství vlastníků, zaniká funkce uplynutím dvou měsíců od dojití prohlášení. </p>
+<p><strong>(13)</strong> Soud jmenuje společenství vlastníků opatrovníka, a to i bez návrhu, jsou-li zájmy předsedy společenství vlastníků v rozporu se zájmy společenství vlastníků. Tyto stanovy ve smyslu § 488 o. z. určují, aby v tomto případě byl tímto opatrovníkem jmenován někdo ze členů společenství vlastníků.</p>
+<p><em><strong>Komentář:</strong> </em></p>
+<p><em>Obdobný jako u úpravy výboru.</em>  </p>
+<h4 style="text-align: center;">ČÁST PÁTÁ </h4>
+<h4 style="text-align: center;">URČENÍ PRVNÍCH ČLENŮ STATUTÁRNÍHO ORGÁNU </h4>
+<h4 style="text-align: center;">Čl. XVII </h4>
+<p>Prvními členy výboru jsou………………</p>
+<p>nebo</p>
+<p>Prvním předsedou společenství vlastníků je.................... </p>
+<h4 style="text-align: center;">ČÁST ŠESTÁ </h4>
+<h4 style="text-align: center;">PRAVIDLA PRO SPRÁVU DOMU A POZEMKU A UŽÍVÁNÍ SPOLEČNÝCH ČÁSTÍ </h4>
+<h4 style="text-align: center;">Čl. XVIII </h4>
+<p>Pravidla pro správu domu a pozemku a užívání společných částí jsou upravena v čl. III až VII těchto stanov a vyplývají také z dalších ustanovení stanov upravujících práva a povinnosti členů vlastníků jednotek a působnost orgánů společenství vlastníků. </p>
+<h4 style="text-align: center;">Čl. XIX</h4>
+<h4 style="text-align: center;"><em><strong>Pravidla pro užívání společných částí – domovní řád </strong></em></h4>
+<p><em><strong>Komentář: </strong></em></p>
+<p><em>Určení pravidel pro správu domu a pozemku a pro užívání společných částí domu tvoří nově od 1. 1. 2014 jednu z povinných obsahových náležitostí stanov. Doposud tato pravidla byla upravena v tzv. domovních řádech. Není jednoznačné, zda lze zajistit dodržování těchto pravidel majetkovými sankcemi v podobě smluvních pokut.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn22">[22]</a> V těchto pravidlech lze řešit <a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn23">[23]</a> např. umísťování vývěsek, nápisů a jiných informačních zařízení (např. reklamy), umístění orientačních tabulí s uvedením jednotlivých bytů a nebytových místností, označení správce domu a jeho adresy, adresa a telefon firmy zajišťující 24hodinový servis výtahu, jména osoby (osob) provádějících úklid domu a přilehlých nemovitostí a čištění chodníků; vyznačení zákazu kouření ve výtahu, kočárkárně, sklepě a sušárně prádla; umístění tabulí s informací o spojení na policii, hasiče, lékaře, havarijní poruchovou službu plynu, elektro, vodovodu. Dále je vhodné zajistit možnost přístupu k hlavním uzávěrům vody a plynu, kanalizačním čisticím vstupům a jiným podobným zařízením, pokud jsou ve společných prostorách. Jsou-li tato zařízení v místnostech vlastníka, musí být učiněna taková opatření, aby k nim byl přístup v případě nutnosti i za jeho nepřítomnosti. Také se řeší informace o uložení klíčů ke společným prostorám a způsob jejich užívání, podmínky pro otevírání a zavírání domu, dodržování klidu v domě v nočních hodinách.</em></p>
+<p><em>Vzhledem ke skutečnosti, že „domovní řád“ tvoří součást stanov, k jejichž změně je zapotřebí forma veřejné listiny, doporučujeme v něm upravit pouze taková pravidla, která jsou podstatná, mezi členy společenství vlastníků nesporná a jejichž změna nebude příliš častá.  </em></p>
+<p><em> </em></p>
+<h4 style="text-align: center;">ČÁST SEDMÁ </h4>
+<h4 style="text-align: center;">PRAVIDLA PRO TVORBU ROZPOČTU SPOLEČENSTVÍ VLASTNÍKŮ, PRO PŘÍSPĚVKY NA SPRÁVU DOMU A ÚHRADU CEN SLUŽEB A PRO ZPŮSOB URČENÍ JEJICH VÝŠE PLACENÉ JEDNOTLIVÝMI VLASTNÍKY JEDNOTEK</h4>
+<h4 style="text-align: center;">Čl. XX </h4>
+<h4 style="text-align: center;">Pravidla pro tvorbu rozpočtu společenství vlastníků </h4>
+<p><strong>(1)</strong> Příjmem společenství vlastníků jsou zejména:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">příspěvky vlastníků jednotek na správu domu a pozemku podle čl. XXI stanov,</li>
+<li style="list-style-type: lower-alpha;">úroky z prodlení přijaté od vlastníků jednotek z důvodu prodlení s platbami příspěvků na správu domu a pozemku podle čl. XXI stanov,</li>
+<li style="list-style-type: lower-alpha;">úroky z prodlení přijaté od vlastníků jednotek z důvodu prodlení s platbami za plnění spojená nebo související s užíváním jednotky podle čl. XXII stanov, včetně nedoplatků z jejich vyúčtování, a pokuty za nesplnění povinnosti vlastníka jednotky podle § 13 odst. 1 zákona č. 67/2013 Sb., kterým se upravují některé otázky související s poskytováním plnění spojených s užíváním bytů a nebytových prostorů v domě s byty,</li>
+<li style="list-style-type: lower-alpha;">úroky z vkladů na bankovních účtech společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">penále, úroky z prodlení a smluvní pokuty zaplacené třetími osobami za porušení povinností ze smluv sjednaných společenstvím vlastníků,</li>
+<li style="list-style-type: lower-alpha;">pojistné plnění z pojistných smluv sjednaných společenstvím vlastníků týkající se společných částí a bonifikace za příznivý škodní průběh, a</li>
+<li style="list-style-type: lower-alpha;">příjmy plynoucí z nakládání s majetkem společenství vlastníků. </li>
+</ol>
+<p><strong>(2)</strong> Příjmem společenství vlastníků nejsou příjmy plynoucí z nakládání se společnými částmi, a to i v případě, že jsou hrazeny na bankovní účet společenství vlastníků; jde zejména o tyto příjmy</p>
+<ol>
+<li style="list-style-type: lower-alpha;">nájemné z pronájmu společných částí domu,</li>
+<li style="list-style-type: lower-alpha;">úroky z prodlení placené z důvodu prodlení nájemců těchto společných částí s platbami nájemného a s úhradami za plnění spojená s užíváním těchto společných částí včetně nedoplatků z jejich vyúčtování, a</li>
+<li style="list-style-type: lower-alpha;">příjmy od třetích osob plynoucí z provozování technických zařízení v domě pro tyto osoby. </li>
+</ol>
+<p><strong>(3)</strong> Výdaje společenství vlastníků jsou náklady na správu domu a pozemku. </p>
+<p><strong>(4)</strong> Návrh rozpočtu připravuje výbor a předkládá ho ke schválení shromáždění tak, aby shromáždění o schválení rozpočtu rozhodlo nejpozději do 20. prosince roku předcházejícího tomu, pro který se rozpočet schvaluje.  </p>
+<p><strong>(5)</strong> Základním kritériem při sestavování rozpočtu je zabezpečení vyrovnaného hospodaření s finančním prostředky v běžném roce a vytvoření dostatečné finanční rezervy na opravy nebo stavební úpravy společných částí domu plánované v budoucích letech. </p>
+<p><strong>(6)</strong> Výsledky plnění rozpočtu schvaluje shromáždění v rámci schválení zprávy o hospodaření společenství vlastníků. </p>
+<p><strong><em>Komentář: </em></strong></p>
+<p><em><strong>Odst. 1, 2:</strong> Upraveny v § 16 nařízení vlády č. 366/2013 Sb.</em></p>
+<p><em><strong>Odst. 6.</strong> Citace § 15 nařízení vlády č. 366/2013 Sb. </em></p>
+<h4 style="text-align: center;">Čl. XXI </h4>
+<h4 style="text-align: center;">Pravidla pro příspěvky na správu domu a pro způsob určení jejich výše placené jednotlivými vlastníky jednotek</h4>
+<p><strong>(1)</strong> Vlastníci jednotek jsou povinni přispívat na správu domu a pozemku ve výši a lhůtě určené shromážděním. </p>
+<p><strong>(2)</strong> Na každou jednotku stejně se rozvrhnou:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">náklady na odměňování členů výboru,</li>
+<li style="list-style-type: lower-alpha;">náklady na vedení účetnictví,</li>
+<li style="list-style-type: lower-alpha;">náklady na vlastní správní činnost dle čl. V stanov,</li>
+<li style="list-style-type: lower-alpha;">náklady na zřízení, vedení a zrušení bankovních účtů společenství vlastníků,</li>
+<li style="list-style-type: lower-alpha;">náklady na rozúčtování a vyúčtování plnění spojených s užíváním jednotek, včetně provedení odečtů hodnot z poměrových měřidel spotřeby vody a ze zařízení sloužících k rozúčtování nákladů na teplo,</li>
+<li style="list-style-type: lower-alpha;">náklady na pořízení majetku sloužícího pro vlastní správní činnost, např. počítač včetně softwarového vybavení a jeho odpisy,</li>
+<li style="list-style-type: lower-alpha;">náklady kanceláře osoby odpovědné za správu domu a pozemku, například vybavení, kancelářské potřeby, poštovné, spotřeba elektřiny, je-li samostatně měřena,</li>
+<li style="list-style-type: lower-alpha;">náklady spojené s poskytováním právních služeb týkajících se správy domu a pozemku.</li>
+</ol>
+<p><strong>(3)</strong> Ostatní náklady na správu domu a pozemku se rozvrhnou podle podílu na společných částech. </p>
+<p><strong>(4)</strong> Při převodu vlastnického práva k jednotce nevzniká společenství vlastníků povinnost vypořádat příspěvky na správu domu ke dni účinnosti převodu. Společenství vlastníků vydá vlastníkovi jednotky na jeho žádost potvrzení, jaké dluhy související se správou domu a pozemku přejdou na nabyvatele jednotky, případně že takové dluhy nejsou. </p>
+<p><strong><em>Komentář: </em></strong></p>
+<p><em><strong>Odst. 2:</strong></em> <em>Upraveno v § 1180 odst. 2 o. z. a v § 8 a § 17 nařízení vlády č. 366/2013 Sb.</em></p>
+<p><em><strong>Odst. 3:</strong> Citace § 1180 odst. 1 o. z., ve stanovách je připuštěna odchylná úprava. Pokud některý z vlastníků výlučně užívá některou ze společných částí, měla by se výše příspěvku stanovit také se zřetelem, povaze, rozměrům a umístění této části a rozsahu povinnosti vlastníka spravovat tuto část na vlastní náklad.</em></p>
+<p><em><strong>Odst. 4:</strong> Upraven v § 1186 odst. 1 o. z. </em></p>
+<h4 style="text-align: center;">Čl. XXII </h4>
+<h4 style="text-align: center;">Pravidla pro příspěvky na úhradu cen služeb a pro způsob určení jejich výše placené jednotlivými vlastníky jednotek </h4>
+<p><strong>(1)</strong> Otázky související s poskytováním plnění spojených s užíváním bytů a nebytových prostorů v domě s byty (dále jen „služby“) a postup při určování záloh za služby, rozúčtování, vyúčtování a vypořádání nákladů na služby, pokud není v těchto stanovách uvedeno jinak, upravují zvláštní právní předpisy.<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn24">[24]</a></p>
+<p><strong>(2)</strong> Službami jsou zejména dodávka tepla a centralizované poskytování teplé vody, dodávka vody a odvádění odpadních vod, provoz výtahu, osvětlení společných prostor v domě, úklid společných prostor v domě, odvoz odpadních vod a čištění jímek, umožnění příjmu rozhlasového a televizního signálu, provoz a čištění komínů a odvoz komunálního odpadu.</p>
+<p><strong>(3)</strong> O druhu poskytovaných služeb, výši záloh, lhůtě placení záloh a o způsobu rozúčtování cen služeb na jednotky rozhoduje shromáždění. Změna způsobu rozúčtování je možná vždy až po uplynutí zúčtovacího období.</p>
+<p><strong>(4)</strong> Nerozhodne-li shromáždění jinak, určí poskytovatel služeb měsíční zálohy za jednotlivé služby jako měsíční podíl z předpokládaných ročních nákladů na služby z uplynulého roku, nebo podle posledního zúčtovacího období, anebo z nákladů odvozených z předpokládaných cen běžného roku.</p>
+<p><strong>(5)</strong> Nerozhodne-li shromáždění jinak, rozúčtují se náklady na služby takto:</p>
+<ol>
+<li style="list-style-type: lower-alpha;">dodávka vody a odvádění odpadních vod v poměru naměřených hodnot na podružných vodoměrech; není-li provedena instalace podružných vodoměrů ve všech bytech nebo nebytových prostorech v domě, rozúčtují se náklady na dodávku vody a odvádění odpadních vod podle směrných čísel roční potřeby vody,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn25">[25]</a></li>
+<li style="list-style-type: lower-alpha;">provoz a čištění komínů podle počtu využívaných vyústění do komínů,</li>
+<li style="list-style-type: lower-alpha;">umožnění příjmu rozhlasového a televizního signálu podle počtu kabelových zásuvek,</li>
+<li style="list-style-type: lower-alpha;">tepelná energie na vytápění v jednotce podle zvláštního právního předpisu,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn26">[26]</a></li>
+<li style="list-style-type: lower-alpha;">poskytování teplé užitkové vody v jednotce podle zvláštního právního předpisu,<a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftn27">[27]</a></li>
+<li style="list-style-type: lower-alpha;">provoz výtahu, osvětlení společných prostor v domě, úklid společných prostor v domě, odvoz odpadních vod a čištění jímek, odvoz komunálního odpadu, popřípadě další služby sjednané mezi poskytovatelem služeb a příjemcem služeb, podle počtu osob dle čl. X. odst. 10 stanov rozhodných pro rozúčtování.</li>
+</ol>
+<p><strong>(6)</strong> V souladu s čl. X odst. 1 písm. e) má každý člen společenství vlastníků právo obdržet vyúčtování záloh na úhradu jednotlivých služeb, nejpozději do čtyř měsíců od skončení zúčtovacího období, přičemž splatnost <em>případných přeplatků, je nejpozději do sedmi měsíců od skončení zúčtovacího období, </em></p>
+<p><strong><em>Komentář:</em></strong></p>
+<p><em><strong>Odst. 2:</strong> Upraveno v § 3 zák. č. 67/2013 Sb.</em></p>
+<p><em><strong>Odst. 3:</strong> Citace § 1208 písm. e) o. z. a § 5 zák. č. 67/2013 Sb.</em></p>
+<p><em><strong>Odst. 4:</strong> Upraveno v § 4 zák. č. 67/2013 Sb.</em></p>
+<p><em><strong>Odst. 5</strong>: Upraveno v § 1208 písm. e) o. a § 5 zák. č. 67/2013 Sb. Zákon č. 67/2013 Sb. upravuje v § 2 pojem osoby rozhodné pro rozúčtování služeb, lze však upravit odchylně shodně s čl. X. odst. 10 stanov a § 1177 o. z., s ohledem na rozdílné vymezení v občanském zákoníku a zák. č. 67/2013 Sb. doporučujeme upravit ve stanovách výslovně. </em></p>
+<p><em> </em></p>
+<h4 style="text-align: center;">ČÁST OSMÁ </h4>
+<h4 style="text-align: center;">ZÁVĚREČNÁ USTANOVENÍ </h4>
+<p><strong>(1)</strong> Tyto stanovy byly schváleny na zasedání shromáždění dne......</p>
+<p><strong>(2)</strong> Ve věcech ve stanovách neupravených platí právní úprava podle českých obecně závazných právních předpisů. </p>
+<p><em>Prvá autorka je notářskou kandidátkou ve Valašském Meziříčí, druhý autor je notářským koncipientem tamtéž.</em></p>
+<p> </p>
+<hr align="left" size="1" width="33%" />
+<p> </p>
+<div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref1">[1]</a> Zveřejněné na <a href="http://obcanskyzakonik.justice.cz/vykladova-stanoviska">http://obcanskyzakonik.justice.cz/vykladova-stanoviska</a>.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref2">[2]</a> Zveřejněno na <a href="http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko_441_NOZ.pdf">http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko_441_NOZ.pdf</a>.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref3">[3]</a> Podle důvodové zprávy veřejný pořádek prostupuje celé právo a zahrnuje pravidla, na nichž leží právní základy společenského řádu zdejší společnosti.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref4">[4]</a> Citace z odůvodnění rozhodnutí NS sp. zn. 31 Cdo 1571/2010 ze dne 16. 1. 2013.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref5">[5]</a> Zveřejněno na <a href="http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko-1198.odst-2.pdf">http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko-1198.odst-2.pdf</a>.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref6">[6]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, C. H. Beck, Praha 2013, str. 743.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref7">[7]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, C. H. Beck, Praha 2013, str. 782.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref8">[8]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, C. H. Beck, Praha 2013, str. 805 a násl., str. 811. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref9">[9]</a> K této problematice blíže Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, C. H. Beck, Praha 2013, str. 779 a násl.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref10">[10]</a> Například vyhláška č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqga3f6nbzhe">499/2006 Sb.</a>, o dokumentaci staveb, ve znění vyhlášky č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgezv6nrs">62/2013 Sb.</a>, vyhláška č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqga4v6mrwha">268/2009 Sb.</a>, o technických požadavcích na stavby, ve znění vyhlášky č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgezf6mrq">20/2012 Sb.</a> </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref11">[11]</a> Trvalý pobyt je upraven v § 10 zákona č. 133/2000 Sb. O evidenci obyvatel a rodných číslech a o změně některých zákonů (zákon o evidenci obyvatel), v platném znění. Občanský zákoník (§ 80, 1177 a 1178) a zákon o veřejných rejstřících právnických a fyzických osob (§ 25) dále používá pojmy bydliště, adresa a místo pobytu. Nová úpravě místa bydliště v občanském zákoníku není jednoduchá, a většina občanů ji nezná, proto je ve stanovách u seznamu členů navrhován údaj o trvalém pobytu a doručovací adrese, které jsou jednoznačné a pro většinu občanů známé. Důvodem je hlavní cíl, aby společenství vlastníků mělo k dispozici adresu, kde si bude vlastník jednotky přebírat poštu.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref12">[12]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, 1. vydání, C. H. Beck, Praha 2013, str. 743.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref13">[13]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, 1. vydání, C. H. Beck, Praha 2013, str. 793 a násl.Kabelková, E., Shödelbauerová, P.: Bytové spoluvlastnictví v novém občanském zákoníku, 1.vydání, 2013, str. 249 a násl. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref14">[14]</a> Nabýt, zcizit nebo zatížit nemovité věci nebo s nimi jinak nakládat lze jen pro účely správy domu a pozemku v souladu s  § 1194 odst. 1 o. z. a dle § 14 odst. 1 nařízení vlády č. 366/2013 Sb.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref15">[15]</a> K tomu srovnej výkladové stanovisko Expertní skupiny Komise pro aplikaci nové civilní legislativy při Ministerstvu spravedlnosti, zveřejněné na <a href="http://obcanskyzakonik.justice.cz/fileadmin/vykladove_stanovisko_k_1208_nova_verze.pdf">http://obcanskyzakonik.justice.cz/fileadmin/vykladove_stanovisko_k_1208_nova_verze.pdf</a> Podle § 1194 odst. 1 o. z. a dle § 14 odst. 2) nařízení vlády č. 366/2013 Sb. lze sjednat úvěr a uzavřít smlouvu o zřízení zástavního práva k jednotce jen pro účely správy domu a pozemku, především pro opravy společných částí nebo změny stavby, jejichž realizace byla schválena usnesením shromáždění vlastníků jednotek. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref16">[16]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol., Občanský zákoník III. Věcná práva, Komentář, 1. vydání, C. H. Beck, Praha 2013, str. 805 a násl., str. 811.Kabelková, E., Shödelbauerová, P., Bytové spoluvlastnictví v novém občanském zákoníku, 1.vydání, 2013, str. 257 a násl. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref17">[17]</a> Zakotvení práva vlastníka jednotky nechat se na zasedání shromáždění zastoupit na základě plné moci reaguje na rozhodnutí Nejvyššího soudu, NS sp. zn. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=njptembrgjpxm6lcmvzf63ttl4ztamjx">29 Cdo 3399/2010</a>, podle kterého ze zákona neplyne oprávnění vlastníka jednotky nechat se na shromáždění vlastníků jednotek zastoupit, nicméně Nejvyšší soud je přesvědčen, že takové právo vlastníka <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=nnptembqhfpwy6bonjswi3tporvwc">jednotky</a> mohou založit stanovy společenství.  </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref18">[18]</a> Zveřejněno na <a href="http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko_441_NOZ.pdf">http://obcanskyzakonik.justice.cz/fileadmin/user_upload/PDF/Stanovisko_441_NOZ.pdf</a>.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref19">[19]</a> Náležitosti zápisu reagují na judikaturu Nejvyššího soudu ( NS <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=njptembqgrpxexzsgvpwg2lw">29 Odo 41/2002</a>), podle které výsledky hlasování, které je třeba uvést v zápise o členské schůzi družstva (lze aplikovat i na shromáždění), se rozumí uvedení počtu přítomných členů družstva a počtu souhlasných hlasů při přijetí každého usnesení. Jestliže družstvo v důsledku porušení této povinnosti znemožnilo členovi v řízení o neplatnosti usnesení členské schůze vést důkaz, že členská schůze nebyla usnášeníschopná, dochází k přenosu důkazního břemene z člena na družstvo.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref20">[20]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, 1. vydání, C. H. Beck, Praha 2013, str. 782.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref21">[21]</a> Spáčil, J., Dobrovolná, E., Handrlica, J., Holejšovský, J. a kol.: Občanský zákoník III. Věcná práva, Komentář, 1. vydání, C. H. Beck, Praha 2013, str. 782.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref22">[22]</a> K tomu blíže srovnej Mirovská, P., SVJ podle nového občanského zákoníku: Půjdou domovní řády vymáhat smluvními pokutami? (10. díl), uveřejněno na <a href="http://www.patria.cz/pravo/2506508/svj-podle-noveho-obcanskeho-zakoniku-pujdou-domovni-rady-vymahat-smluvnimi-pokutami-10-dil.html">http://www.patria.cz/pravo/2506508/svj-podle-noveho-obcanskeho-zakoniku-pujdou-domovni-rady-vymahat-smluvnimi-pokutami-10-dil.html</a>. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref23">[23]</a> Kabelková, E., Shödelbauerová, P.: Bytové spoluvlastnictví v novém občanském zákoníku, 1.vydání, 2013, str. 113.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref24">[24]</a> Zákon č. 67/2013 Sb., kterým se upravují některé otázky související s poskytováním plnění spojených s užíváním bytů a nebytových prostorů v domě s byty, vyhláška č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mzxgi">372/2001 Sb.</a>, kterou se stanoví pravidla pro rozúčtování nákladů na tepelnou energii na vytápění a na poskytování teplé užitkové vody mezi konečné spotřebitele, dále zákon č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayf6nbqgy">406/2000 Sb.</a>, o hospodaření s energií, zákon č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mrxgq">274/2001 Sb.</a>, o vodovodech a kanalizacích pro veřejnou potřebu, zákon č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mjygu">185/2001 Sb.</a>, o odpadech.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref25">[25]</a> Příloha č. 12 k vyhlášce č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6nbsha">428/2001 Sb.</a>, kterou se provádí zákon č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mrxgq">274/2001 Sb.</a>, o vodovodech a kanalizacích pro veřejnou potřebu a o změně některých zákonů (zákon o vodovodech a kanalizacích), ve znění pozdějších předpisů. </div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref26">[26]</a> Vyhláška č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mzxgi">372/2001 Sb.</a>, kterou se stanoví pravidla pro rozúčtování nákladů na tepelnou energii na vytápění a na poskytování teplé užitkové vody mezi konečné spotřebitele.</div>
+<div><a title="" href="file:///C:/Users/dvorakova/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.Outlook/QD6GYR9G/Cellar-stanovySVJ-BAonline.doc#_ftnref27">[27]</a> Vyhláška č. <a href="http://www.beck-online.cz/bo/document-view.seam?documentId=onrf6mrqgayv6mzxgi">372/2001 Sb.</a>, kterou se stanoví pravidla pro rozúčtování nákladů na tepelnou energii na vytápění a na poskytování teplé užitkové vody mezi konečné spotřebitele. </div>
+</div>
+    </section>
+    <!-- #content -->
+
+    <div class="clear"></div>
+
+</section>
+<!-- #main -->
+
+<footer>
+        <div>&copy; <a href="http://www.cak.cz" target="_blank">česká advokátní komora</a> 2012 - 2013</div>
+    <div>&copy; <a href="http://www.impax.cz" target="_blank">impax</a> 2012 - 2013</div>
+    <div><a href="mailto:impax@impax.cz">kontaktovat správce webu</a></div>
+    <div><a href="http://www.cak.cz/scripts/detail.php?id=327" target="_blank">kontakty čak</a></div>
+    <div><a href="rss/">RSS</a></div>
+    <div><a href="mapastranek/">MAPA STRÁNEK</a></div>
+    <div><a href="stanovy-spolecenstvi-vlastniku-jednotek-zmeny-od-1.-1.-2014?browser=mobi">Mobilní zobrazení</a></div>
+
+</footer>
+<!-- footer -->
+
+
+
+</body>
+</html>
+    
+    
